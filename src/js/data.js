@@ -8,3 +8,8 @@ const example = () => {
 };
 
 window.example = example;
+
+const dataPokemonFilter = (dataPokemon.filter (element =>{
+  element.type.includes == "Fire"
+  return dataPokemonFilter;
+}));

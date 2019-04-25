@@ -1,29 +1,19 @@
 /* Manejo del DOM */
 const dataPokemon = POKEMON.pokemon;
 console.log(dataPokemon.length);
+
+const dataPokemonFilterFire = window.dataPokemonFilter;
 let showPokemon = '';
-let i, j=0, k=0, numcard =0;
+let i;
+//MOSTRANDO POKEMONS EN PANTALLA DENTRO DE UN CONTENEDOR
+for (i = 0; i < dataPokemon.length; i++) {
+        
+    showPokemon += `
+        <a href="">
+        <img style="width:25px; height: auto" src= ${dataPokemon[i].img} class="" alt="...">
+        </a>`
+}                
+document.getElementById("item").innerHTML = showPokemon;
 
-    for (i = 0; i < 3; i++) {
-        if (i===0 || j % 5 === 0){
-        showPokemon += `<ul class="list-group list-group-horizontal" >`
-        j++;    
-        } else{
-            for (j = numcard; j < 5 || (j<=5 && j<10); j++) {
-                if (j<5+numcard){
-                showPokemon += `<li class="list-group-item">
-                    <a href="">
-                    <img src= ${dataPokemon[numcard].img} class="d-block w-100" alt="...">
-                    </a>
-                    </li> `
-                    numcard++;
-                } else {
-                showPokemon += `</ul>`   
-                }
-            }
-        }
-    }
-
-    
-    document.getElementById("item").innerHTML = showPokemon;
+document.getElementById("filter").innerHTML = dataPokemonFilterFire;
 
