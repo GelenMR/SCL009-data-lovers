@@ -14,9 +14,9 @@ window.pokemon = {
     return pokemonList[pokemonByName.get(nameOfPokemon)];
   },
 
-  filterByType: (filterBy) => {
-    const pokemonList = window.main.getPokemonList();
-    const result = pokemonList.filter(pokemon => pokemon.type.includes(filterBy));
-    return result;
-  },
-};
+window.example = example;
+
+const dataPokemonFilter = (dataPokemon.filter (element =>{
+  element.type.includes == "Fire"
+  return dataPokemonFilter;
+}));
