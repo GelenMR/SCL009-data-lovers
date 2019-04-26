@@ -1,10 +1,22 @@
-/* Manejo de data */
+window.pokemon = {
 
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
+  getPokemonByNumber: (numberOfPokemon) => {
+    numberOfPokemon--;
+    const pokemonList = window.main.getPokemonList();
+    // console.log(pokemonList[numberOfPokemon]);
+    return pokemonList[numberOfPokemon];
+  },
 
-const example = () => {
-  return 'example';
+  getPokemonByName: (nameOfPokemon) => {
+    const pokemonList = window.main.getPokemonList();
+    const pokemonByName = window.main.getPokemonMap();
+    nameOfPokemon = nameOfPokemon.toLowerCase();
+    return pokemonList[pokemonByName.get(nameOfPokemon)];
+  },
+
+  filterByType: (filterBy) => {
+    const pokemonList = window.main.getPokemonList();
+    const result = pokemonList.filter(pokemon => pokemon.type.includes(filterBy));
+    return result;
+  },
 };
-
-window.example = example;
