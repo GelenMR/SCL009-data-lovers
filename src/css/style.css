@@ -1,4 +1,9 @@
 body{
-
-    
+background-image: url("https://i.ibb.co/yyqYFgK/AR-Photos.png");
+background-size: contain;    
  }
+
+.titulo{
+    padding: 60px;
+}
+}
