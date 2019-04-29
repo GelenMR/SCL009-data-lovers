@@ -2,7 +2,12 @@
 const dataPokemon = POKEMON.pokemon;
 console.log(dataPokemon.length);
 
-const dataPokemonFilterFire = window.dataPokemonFilter;
+const dataPokemonFilterFire = window.dataPokemonFire;
+console.log(dataPokemonFilterFire);
+
+const dataPokemonOrderAs = window.dataPokemonAs;
+console.log(dataPokemonOrderAs);
+
 let showPokemon = '';
 let i;
 //MOSTRANDO POKEMONS EN PANTALLA DENTRO DE UN CONTENEDOR
@@ -15,5 +20,8 @@ for (i = 0; i < dataPokemon.length; i++) {
 }                
 document.getElementById("item").innerHTML = showPokemon;
 
+//FILTRANDO POKEMONS POR TIPO = Fire
 document.getElementById("filter").innerHTML = dataPokemonFilterFire;
 
+//ORDENANDO POKEMONS ALFABETICAMENTE: ASCENDENTE
+document.getElementById("orderAs").innerHTML = dataPokemonOrderAs;

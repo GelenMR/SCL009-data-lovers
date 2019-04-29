@@ -8,8 +8,12 @@ const example = () => {
 };
 
 window.example = example;
+dataPokemon = POKEMON.pokemon;
 
-const dataPokemonFilter = (dataPokemon.filter (element =>{
-  element.type.includes == "Fire"
-  return dataPokemonFilter;
+const dataPokemonFire = (dataPokemon.filter (element =>{
+  console.log(element.type.includes("Fire"));
 }));
+
+const dataPokemonAsc = dataPokemon.sort ((a,b) =>{
+  return (a.name> b.name)
+});
