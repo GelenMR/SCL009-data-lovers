@@ -9,14 +9,66 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     
   </head>
-  <body>
-    <header>
-   
+  <body class="bg">
+    <header class="sticky">
+    <!-- Copiado de Vita -->
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col sm-9 md-9 lg-11 titulo">
+              <h1>¡CONOCE TU POKEMON!</h1>
+            </div>
+            <div class="topright"> 
+              <img src="image/lg-pokemon.png" style="width:200px; height: auto" alt="logo-pokemon-go">
+            </div>
+        </div>
+        <!-- Segundo navbar que me envio Vita con Modificaciones -->
+        <!-- Menu de busqueda y filtros-->
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <form class="form-inline my-2 my-lg-0">
+                <p class="navbar-brand">Conoce a tu Pokemon</p>
+                <input class="form-control mr-sm-2" type="search" id="searchName" placeholder="Ingresa el nombre de tu pokemon" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="btnSearchName">Buscar</button>
+              </form>
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Filtrar por</a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" id="filterAsc" href="#">Nombre: A-Z</a>
+                    <a class="dropdown-item" id="filterDesc" href="#">Nombre: Z-A</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" id="searchNum" href="#">Número</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" id="searchType">Tipo</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <!-- Navbar copiado de Github de Vita -->
+          <!-- banner buscqueda y filtros
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Conoce a tu Pokemon</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <input type="text" id="search" placeholder="Ingresa el nombre de tu pokemon">
+                    <p>Filtrar búsqueda</p>
+                    <a class="nav-item nav-link" href="#">Tipos</a>
+                    <a class="nav-item nav-link" href="#">Orden Alfabético</a>
+                </div>
+            </div>
+          </nav>-->
+      </div>
     </header>
     <div  class="container-fluid" >
       <div class="container">
         <div class="row">
-          <div class="col-sm-4 col-md-6 col-lg-8" id="item">
+          <div class="col-sm-3 col-md-6 col-lg-8 center" id="item">
             <!-- Aqui muestra los Pokemon -->
           </div>
         </div>

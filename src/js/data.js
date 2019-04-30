@@ -8,12 +8,14 @@ const example = () => {
 };
 
 window.example = example;
-dataPokemon = POKEMON.pokemon;
 
+// FUNCIÓN FILTRAR POR TIPO
 const dataPokemonFire = (dataPokemon.filter (element =>{
   console.log(element.type.includes("Fire"));
+  return(element.type.includes("Fire"));
 }));
 
+// FUNCIÓN ORDENAR ASCENDENTE
 const dataPokemonAsc = dataPokemon.sort ((a,b) =>{
   return (a.name> b.name)
 });

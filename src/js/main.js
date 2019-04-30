@@ -1,5 +1,5 @@
 /* Manejo del DOM */
-const dataPokemon = POKEMON.pokemon;
+const dataPokemon = window.POKEMON.pokemon;
 console.log(dataPokemon.length);
 
 const dataPokemonFilterFire = window.dataPokemonFire;
@@ -15,7 +15,7 @@ for (i = 0; i < dataPokemon.length; i++) {
         
     showPokemon += `
         <a href="">
-        <img style="width:25px; height: auto" src= ${dataPokemon[i].img} class="" alt="...">
+        <img style="width:110px; height: auto" src= ${dataPokemon[i].img} class="" alt="...">
         </a>`
 }                
 document.getElementById("item").innerHTML = showPokemon;
