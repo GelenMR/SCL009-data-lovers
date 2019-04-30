@@ -1,123 +1,128 @@
+<!--TRABAJAR CON LÍNEAS ORDENADAS-->
+<!--COMENTAR TODO PARA QUE SEA MÁS SENCILLO DE COMPRENDER-->
+<!--COMENTAR TAMBIÉN POR QUÉ EL NOMBRE DE CADA VAR Y CONST, QUÉ ES CADA UNA Y DE DÓNDE VIENE-->
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>¡Conoce a tu pokemon!</title>
-    <link rel="shortcut icon"
-        href="image/kisspng-pokmon-go-computer-icons-pok-ball-5b156d4654de11.2724529215281308863476.png">
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-
+  <meta charset="utf-8">
+  <title>Pokemon Go App</title>
+  <link rel="shortcut icon"
+    href="image/kisspng-pokmon-go-computer-icons-pok-ball-5b156d4654de11.2724529215281308863476.png">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
 </head>
-<body>
-  <div class="container-fluid">
-    <div class= "row"> 
-  <div class="col sm-11 md-9 lg-11 titulo"> <h1>¡CONOCE A TU POKEMON!</h1></div> 
-    <div class="col sm-1 md-3 lg-1 imagen"> <img src="https://i.ibb.co/2WKcY79/fotitomembrete.png" ></div>
-    </div>
-    </div>
-<!---banner buscqueda y filtros-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Conoce a tu Pokemon</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <input type="text" id="search" placeholder="Ingresa el nombre de tu pokemon">
-            <p>Filtrar búsqueda</p>
-            <a class="nav-item nav-link" href="#">Tipos</a>
-            <a class="nav-item nav-link" href="#">Orden Alfabético</a>
-        </div>
-    </div>
-</nav>
-<!---CARRUSEL DE POKEMON-->
-<div class="container-fluid" id="item">
+<!--Agregamos "CSS" al fondo aquí para hacerlo más sencillo, responsivo y bacán-->
+<style>
+  body,
+  html {
+    height: 100%;
+  }
 
+  .bg {
+    background-image: url("https://pokemongohub.net/wp-content/uploads/2018/06/AR-Photos.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    <!-- carrucel
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <ul class="list-group list-group-horizontal">
-              <li class="list-group-item" id="item"><img src="http://www.serebii.net/pokemongo/pokemon/001.png" class="d-block w-100" alt="..."></li>
-              <li class="list-group-item"><a href="https://www.w3schools.com/html/"><img src="http://www.serebii.net/pokemongo/pokemon/002.png" class="d-block w-100" alt="..."></a></li>
-              <li class="list-group-item"><img src="http://www.serebii.net/pokemongo/pokemon/003.png"class="d-block w-100" alt="..."></li>
-              <li class="list-group-item"><img src="http://www.serebii.net/pokemongo/pokemon/004.png" class="d-block w-100" alt="..."></li>
-              <li class="list-group-item"><img src="http://www.serebii.net/pokemongo/pokemon/005.png"class="d-block w-100" alt="..."></li>
-            </ul>
-            <ul class="list-group list-group-horizontal">
-              <li class="list-group-item"><img src="http://www.serebii.net/pokemongo/pokemon/001.png" class="d-block w-100" alt="..."></li>
-              <li class="list-group-item"><img src="http://www.serebii.net/pokemongo/pokemon/002.png" class="d-block w-100" alt="..."></li>
-              <li class="list-group-item"><img src="http://www.serebii.net/pokemongo/pokemon/003.png"class="d-block w-100" alt="..."></li>
-              <li class="list-group-item"><img src="http://www.serebii.net/pokemongo/pokemon/004.png" class="d-block w-100" alt="..."></li>
-              <li class="list-group-item"><img src="http://www.serebii.net/pokemongo/pokemon/005.png"class="d-block w-100" alt="..."></li>
-            </ul>
-            <ul class="list-group list-group-horizontal">
-              <li class="list-group-item"><img src="http://www.serebii.net/pokemongo/pokemon/001.png" class="d-block w-100" alt="..."></li>
-              <li class="list-group-item"><img src="http://www.serebii.net/pokemongo/pokemon/002.png" class="d-block w-100" alt="..."></li>
-              <li class="list-group-item"><img src="http://www.serebii.net/pokemongo/pokemon/003.png"class="d-block w-100" alt="..."></li>
-              <li class="list-group-item"><img src="http://www.serebii.net/pokemongo/pokemon/004.png" class="d-block w-100" alt="..."></li>
-              <li class="list-group-item"><img src="http://www.serebii.net/pokemongo/pokemon/005.png"class="d-block w-100" alt="..."></li>
-            </ul>
-          </div>
-          <div class="carousel-item">
-            <img src="http://www.serebii.net/pokemongo/pokemon/001.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="http://www.serebii.net/pokemongo/pokemon/001.png" class="d-block w-100" alt="...">
-    <div  class="container-fluid" >
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4 col-md-6 col-lg-8" id="item">
-
-</div>
-</div>
-<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-</a>
-<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-</a>
-</div>
-<div class="container" id="filter">
-
-</div>
-
-
-</div>
-
+  }
+</style>
 <!---->
-<footer>
-<div> class=  </div>
-</footer>
+
+<body class="bg" id="index">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col sm-9 md-9 lg-11 titulo">
+        <h1>¡CONOCE A TU POKEMON!</h1>
+      </div>
+      <div class="topright">
+        <img src="https://i.ibb.co/2WKcY79/fotitomembrete.png">
+      </div>
+    </div>
+    <!--DROPDOWN TIPOS-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="type-dropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              TYPE
+            </a>
+            <div class="dropdown-menu" aria-labelledby="type-dropdown">
+              <button type="button" class="dropdown-item type-item" type-name="Bug">Bug</button>
+              <button type="button" class="dropdown-item type-item" type-name="Dragon">Dragon</button>
+              <button type="button" class="dropdown-item type-item" type-name="Electric">Electric</button>
+              <button type="button" class="dropdown-item type-item" type-name="Fighting">Fighting</button>
+              <button type="button" class="dropdown-item type-item" type-name="Fire">Fire</button>
+              <button type="button" class="dropdown-item type-item" type-name="Flying">Flying</button>
+              <button type="button" class="dropdown-item type-item" type-name="Ghost">Ghost</button>
+              <button type="button" class="dropdown-item type-item" type-name="Grass">Grass</button>
+              <button type="button" class="dropdown-item type-item" type-name="Ground">Ground</button>
+              <button type="button" class="dropdown-item type-item" type-name="Ice">Ice</button>
+              <button type="button" class="dropdown-item type-item" type-name="Normal">Normal</button>
+              <button type="button" class="dropdown-item type-item" type-name="Poison">Poison</button>
+              <button type="button" class="dropdown-item type-item" type-name="Psychic">Psychic</button>
+              <button type="button" class="dropdown-item type-item" type-name="Rock">Rock</button>
+              <button type="button" class="dropdown-item type-item" type-name="Water">Water</button>
+            </div>
+          </li>
+          <!---->
+          <!--DROPDOWN HUEVITOS-->
+          <li>
+            <div class="dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="egg-dropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                EGGS
+              </a>
+              <div class="dropdown-menu" aria-labelledby="egg-dropdown">
+                <button type="button" class="dropdown-item egg-item" egg-km="2 km">2 km</button>
+                <button type="button" class="dropdown-item egg-item" egg-km="5 km">5 km</button>
+                <button type="button" class="dropdown-item egg-item" egg-km="10 km">10 km</button>
+              </div>
+            </div>
+          </li>
+          <!---->
+          <!--Buscador por texto y su botón-->
+          <form class="form-inline my-3 my-lg-1">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </div>
+    </nav>
+  </div>
+  <br>
+  <br>
+  <!---->
+  <!--TARJETAS DE POKEMON-->
+  <section>
+    <div id="pokemonId">
+    </div>
+  </section>
+  <!---->
 
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
-<!-- <script src="./data/injuries/injuries.js"></script> -->
-<script src="./data/pokemon/pokemon.js"></script>
-<!-- <script src="./data/steam/steam.js"></script> -->
-<!-- <script src="./data/worldbank/worldbank.js"></script> -->
-<!-- <script src="./data/lol/lol.js"></script> -->
-<script src="js/bootstrap.min.js"></script>
-<script src="js/data.js"></script>
-<script src="js/main.js"></script>
+  <!-- <script src="./data/injuries/injuries.js"></script> -->
+  <script src="./data/pokemon/pokemon.js"></script>
+  <!-- <script src="./data/steam/steam.js"></script> -->
+  <!-- <script src="./data/worldbank/worldbank.js"></script> -->
+  <!-- <script src="./data/lol/lol.js"></script> -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

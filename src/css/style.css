@@ -1,9 +1,6 @@
-body{
-background-image: url("https://i.ibb.co/yyqYFgK/AR-Photos.png");
-background-size: contain;    
- }
 
-.titulo{
-    padding: 60px;
-}
+.topright{
+    position: absolute;
+    top: 8px;
+    right: 16px;
 }
