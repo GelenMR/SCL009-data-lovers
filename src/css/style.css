@@ -1,6 +1,38 @@
-
+/*Codigo Vita*/
+body, html{
+    height: 100%;
+}
+.bg{
+    background-image: url("https://pokemongohub.net/wp-content/uploads/2018/06/AR-Photos.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .topright{
-    position: absolute;
+    position: relative;
     top: 8px;
-    right: 16px;
+    right: 8px;
+}
+.titulo{
+    padding: 40px;
+    color: darkgoldenrod;
+}
+/*Codigo Vita*/
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid gray;
+    padding: 10px;
+  }
+.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    border: 2px solid rgba(0, 0, 0, 0.650);
+    background-color: rgba(0, 0, 0, 0.650);
+}
+#item{
+    background-color: rgba(0, 0, 0, 0.650);
 }
