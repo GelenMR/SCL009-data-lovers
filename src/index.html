@@ -3,16 +3,14 @@
 <!--COMENTAR TAMBIÉN POR QUÉ EL NOMBRE DE CADA VAR Y CONST, QUÉ ES CADA UNA Y DE DÓNDE VIENE-->
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Pokemon</title>
   <link rel="shortcut icon" href="image/icons-pok-ball.png">
-  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body class="bg" id="index">
   <header class= "sticky"> 
     <!--Victoria-->
@@ -49,32 +47,31 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">Filtrar por Tipos</a>
-                <div class="dropdown-menu" aria-labelledby="type-dropdown">
-                    <button type="button" class="dropdown-item type-item" id="bug" type-name="Bug">Bug</button>
-                    <button type="button" class="dropdown-item type-item" id="dragon" type-name="Dragon">Dragon</button>
-                    <button type="button" class="dropdown-item type-item" id="electric" type-name="Electric">Electric</button>
-                    <button type="button" class="dropdown-item type-item" id="fighting" type-name="Fighting">Fighting</button>
-                    <button type="button" class="dropdown-item type-item" id="fire" type-name="Fire">Fire</button>
-                    <button type="button" class="dropdown-item type-item" id="flying" type-name="Flying">Flying</button>
-                    <button type="button" class="dropdown-item type-item" id="ghost" type-name="Ghost">Ghost</button>
-                    <button type="button" class="dropdown-item type-item" id="grass" type-name="Grass">Grass</button>
-                    <button type="button" class="dropdown-item type-item" id="ground" type-name="Ground">Ground</button>
-                    <button type="button" class="dropdown-item type-item" id="ice" type-name="Ice">Ice</button>
-                    <button type="button" class="dropdown-item type-item" id="normal" type-name="Normal">Normal</button>
-                    <button type="button" class="dropdown-item type-item" id="poison" type-name="Poison">Poison</button>
-                    <button type="button" class="dropdown-item type-item" id="psychic" type-name="Psychic">Psychic</button>
-                    <button type="button" class="dropdown-item type-item" id="rock" type-name="Rock">Rock</button>
-                    <button type="button" class="dropdown-item type-item" id="water" type-name="Water">Water</button>
-                </div>
+                <div class="dropdown-menu" aria-labelledby="type-dropdown" id="filterType">
+                    <a  class="dropdown-item type-item" id="bug" type-name="Bug">Bug</a>
+                    <a  class="dropdown-item type-item" id="dragon" type-name="Dragon">Dragon</a>
+                    <a  class="dropdown-item type-item" id="electric" type-name="Electric">Electric</a>
+                    <a  class="dropdown-item type-item" id="fire" type-name="Fire">Fire</a>
+                    <a  class="dropdown-item type-item" id="fighting" type-name="Fighting">Fighting</a>
+                    <a  class="dropdown-item type-item" id="flying" type-name="Flying">Flying</a>
+                    <a  class="dropdown-item type-item" id="ghost" type-name="Ghost">Ghost</a>
+                    <a  class="dropdown-item type-item" id="grass" type-name="Grass">Grass</a>
+                    <a  class="dropdown-item type-item" id="ground" type-name="Ground">Ground</a>
+                    <a  class="dropdown-item type-item" id="ice" type-name="Ice">Ice</a>
+                    <a  class="dropdown-item type-item" id="normal" type-name="Normal">Normal</a>
+                    <a  class="dropdown-item type-item" id="poison" type-name="Poison">Poison</a>
+                    <a  class="dropdown-item type-item" id="psychic" type-name="Psychic">Psychic</a>
+                    <a  class="dropdown-item type-item" id="rock" type-name="Rock">Rock</a>
+                 </div>
               </li>
               <!-- DROPDOWN HUEVITOS -->
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="eggDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                   aria-expanded="false">Filtrar por Huevos</a>
-                <div class="dropdown-menu" aria-labelledby="egg-dropdown">
-                  <button type="button" class="dropdown-item egg-item" egg-km="2 km">2 km</button>
-                  <button type="button" class="dropdown-item egg-item" egg-km="5 km">5 km</button>
-                  <button type="button" class="dropdown-item egg-item" egg-km="10 km">10 km</button>
+                <div class="dropdown-menu" aria-labelledby="type-dropdown" id="filterEggs">
+                  <a class="dropdown-item type-item" type-name="2 km">2 km</a>
+                  <a class="dropdown-item type-item" type-name="5 km">5 km</a>
+                  <a class="dropdown-item type-item" type-name="10 km">10 km</a>
                 </div>
               </li>
             <!-- ./DROPDOWN -->
@@ -85,47 +82,15 @@
   <br>
   <!--TARJETAS DE POKEMON-->
   <section>
-    <div class="container-fluid" >
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-3 col-md-6 col-lg-8 center" id="item">
-              <!-- Aqui muestra los Pokemon -->
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-4 col-md-6 col-lg-8" id="filter">
-              <!-- Aqui muestra los Pokemon filtrados por tipo (Fire) -->
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-4 col-md-6 col-lg-8" id="orderAsc">
-              <!-- Aqui muestra los Pokemon por orden alfabetico ascenddente -->
-            </div>
-          </div>
-        </div> 
-        <section class="" id="card">
-            <!-- Modal de Tarjetas Pokemon -->
-        </section>    
+    <div  class="container">
+      <div class="row" id="root">
       </div>
+    </div>
   </section>
-  <!-- ./TARJETAS DE POKEMON -->
- 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.
-  cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <!-- <script src="./data/injuries/injuries.js"></script> -->
+    
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="./data/pokemon/pokemon.js"></script>
-  <!-- <script src="./data/steam/steam.js"></script> -->
-  <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-  <!-- <script src="./data/lol/lol.js"></script> -->
   <script src="js/bootstrap.min.js"></script>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

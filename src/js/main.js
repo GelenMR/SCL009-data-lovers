@@ -1,66 +1,54 @@
-
-//MUESTRA TARJETITAS EN EL INDEX
-// 
-// let infoCard = '';
-// let btnCard = document.getElementById("${dataPokemon[i].img}");
-// btnCard.addEventListener("click", () => {
-
-//   showData(dataPokemon[i]);
-// });
-// const showData = (dataPokemon) => {
-//   data.forEach(element => {
-//     infoCard = `<div class="col-md-3">
-//         <div class="card">
-//         <img class="card-img-top" src="${element[i].img}" alt="Card image cap">
-//         <div class="card-body">
-//             <h5 class="card-title">${element[i].name}</h5>
-//             <p class="card-text"> ${element[i].num}</p>
-//             <p class="card-text">${element[i].type}</p>
-//             <p class="card-text">${element[i].egg}</p>
-//             <p class="card-text">${element[i].weaknesses}</p>
-//         </div>
-//         </div>
-//     </div>`
-//   })
-//   document.getElementById('card').innerHTML = infoCard
-// }
-
-/* Manejo del DOM */
+//DECLARAMOS NUESTRAS VARIABLES
 const dataPokemon = window.POKEMON.pokemon;
-console.log(dataPokemon.length);
-window.dataPokemon = dataPokemon;
+const btnSearchName = document.getElementById("btnSearchName");
+const searchName = document.getElementById("searchName").value;
+const filterType = document.getElementById("filterType");
+const filterEgg = document.getElementById("filterEgg");
 
-let showPokemon = '';
-let i;
-//MOSTRANDO POKEMONS EN PANTALLA DENTRO DE UN CONTENEDOR
-for (i = 0; i < dataPokemon.length; i++) {
-    showPokemon += `
-        <a href="#card" id="${dataPokemon[i].num}">
-        <img style="width:110px; height: auto" src= ${dataPokemon[i].img} class="" alt="...">
-        </a>`
-}                
-document.getElementById("item").innerHTML = showPokemon;
+//CONTENEDOR DONDE MOSTRAREMOS LA INFO
+const showAll = document.getElementById("root");
+const createCards = (data) => {
+  let pokemonCard = '';
+  data.forEach((pokemon) => {
+    card = `
+    <div class="col-12 col-md-3">
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <img src="${ pokemon.img}" /><br>
+    <b>Nº </b>${ pokemon.num}</b><br>
+    <b>${ pokemon.name}</b><br>
+    <b>Tipo </b><br> ${ pokemon.type}</b><br>
+    <b>Debilidades </b><br> ${ pokemon.weaknesses}<br>
+    <b>Huevos </b><br> ${pokemon.egg}</b><br><br>
+    </div>
+    </div>
+    </div>`;
+    pokemonCard += card
+  })
+  showAll.innerHTML = pokemonCard
+ }
+ // LLAMADO A LA FUNCIÓN QUE CREA LA CARD: EL PARÁMETRO (DATAPOKEMON)
+ createCards(dataPokemon);
 
-//FILTRANDO POKEMONS POR NAME
-let btnSearchName = document.getElementById("btnSearchName");
-btnSearchName.addEventListener("click", () => {
-    showPokemon = "";
-    let searchName = document.getElementById("searchName").value;
-    window.filterNamePokemon(dataPokemon, searchName);
-        
+//  FILTRO POR TIPOS
+filterType.addEventListener("click",(event)=> {
+ pokemonCard = "";
+ let condition = event.target.text;
+ console.log(condition);
+  createCards(window.filterData.type(dataPokemon,condition));
 });
 
-document.getElementById("orderAsc").innerHTML = resultFilterName;
+// FILTRO POR HUEVOS
+filterEggs.addEventListener("click", (event) => {
+  pokemonCard = "";
+  let condition = event.target.text;
+  console.log(condition);
+  createCards(window.filterData.eggs(dataPokemon, condition));
+});
 
-
-
-
-//FILTRANDO POKEMONS POR TIPO = Fire
-const dataPokemonFilterFire = window.dataPokemonFire;
-console.log(dataPokemonFilterFire);
-document.getElementById("filter").innerHTML = dataPokemonFilterFire;
-
-//ORDENANDO POKEMONS ALFABETICAMENTE: ASCENDENTE
-// const dataPokemonOrderAs = window.dataPokemonAs;
-// console.log(dataPokemonOrderAs);
-// document.getElementById("orderAs").innerHTML = dataPokemonOrderAs;
+//FILTRANDO POKEMONS POR NAME
+btnSearchName.addEventListener("click", () => {
+    pokemonCard = "";
+    let condition = searchName;
+   createCards(window.filterData.name(dataPokemon, condition));       
+});
