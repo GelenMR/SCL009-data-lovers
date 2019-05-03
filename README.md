@@ -37,9 +37,13 @@ Para el proceso de diseño, se tuvo en consideración directa las necesidades de
 
 [Ver encuesta 📊](https://docs.google.com/forms/d/e/1FAIpQLSfrfAju7lY7yyWafQmdtuOol5PEt3oRUHefXkrTeUJ4jiYVxQ/viewform)
 Y los resultados fueron los siguientes:
+
 ![Resultados](https://i.ibb.co/2jSqc17/encuestasresultados1.png)
+
 ![Resultados](https://i.ibb.co/wpNv4D5/encuestasresultados2.png)
+
 ![Resultados](https://i.ibb.co/pnGyrVd/encuestasresultados3.png")
+
 Con esto, logramos concluirlo siguiente, y responder las **vitales** preguntas para el desarrollo de la plataforma:
 
 **Nuestros usuarios objetivo serán las personas con conocimientos básicos del juego. Cuyo principal interés es poder consultar de manera ágil, eficiente  y rápida la información sobre los pokémon que podrían encontrar en el juego, siendo de estos los datos más relevantes -en orden de prioridades- las características físicas, las debilidades y el tiempo de spawning. *Conoce tu Pokemon* es una aplicación sencilla, y fácil de comprender, que responde a las diferentes pantallas desde las cuales el usuario podría acceder, mostrándole información precisa y oportuna respecto a tus pokemon, que puede ser usada antes o durante una partida.**
@@ -58,7 +62,7 @@ la planificación cronológica de nuestro proyecto se encuentra registrada en **
 ➡La plataforma debe tener un contenedor con todos los pokemon para que el usuario pueda reconocerlos a través de su foto.
 ➡A través de la imagen, el usuario podrá seleccionarlo y acceder a toda la información adicional.
 
-*Historia de usuario 2
+* Historia de usuario 2
 
 **Como** jugador novato de pokemon go✔
 **Quiero** poder hallar rápidamente el pokemon que necesito por su nombre✔
@@ -70,7 +74,7 @@ la planificación cronológica de nuestro proyecto se encuentra registrada en **
 ➡Selecciono el pokemon que necesito y accedo a su información.
 
 
-*Historia de usuario 3
+* Historia de usuario 3
 
 **Como** jugador novato de pokemon go✔
 **Quiero** poder hallar rápidamente el pokemon que necesito por su tipo✔
