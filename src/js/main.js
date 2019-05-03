@@ -1,102 +1,52 @@
-//DECLARAMOS NUESTROS ARRAY DEL JSON
+//DECLARAMOS NUESTRA VARIABLE QUE MUESTRA LA DATA TOTAL
+let btnSearchName = document.getElementById("btnSearchName");
+let searchName = document.getElementById("searchName").value;
+const filterType = document.getElementById("filterType");
+const filterEgg = document.getElementById("filterEgg");
+
 let dataPokemon = window.POKEMON.pokemon;
 //CONTENEDOR DONDE MOSTRAREMOS LA INFO
 const showAll = document.getElementById("root");
 const createCards = (data) => {
   let pokemonCard = '';
-  //RECORREMOS EL ARRAY 
   data.forEach((pokemon) => {
-    //CREAMOS LA TARJETA CON LOS ELEMENTOS DEL ARRAY
     card = `
-    <div class="col">
+    
+    <div class="col-12 col-md-3">
     <div class="card" style="width: 18rem;">
     <div class="card-body">
     <img src="${ pokemon.img}" /><br>
     <b>Nº </b>${ pokemon.num}</b><br>
     <b>${ pokemon.name}</b><br>
-    <b>Tipo </b><br> ${ pokemon.weaknesses}</b><br>
+    <b>Tipo </b><br> ${ pokemon.type}</b><br>
     <b>Debilidades </b><br> ${ pokemon.weaknesses}<br>
     <b>Huevos </b><br> ${pokemon.egg}</b><br><br>
     </div>
-    </div>S
+    </div>
     </div>
     `;
     pokemonCard += card
   })
   showAll.innerHTML = pokemonCard
-}
-//MOSTRAMOS LA DATA DESDE EL JSON
-createCards(dataPokemon)
-
-
-// OBTENIENDO VALOR DE TIPO SELECCIONADO POR USUARIO EN DROPDOWN
-const selectType = document.getElementById("dropdown-item type-item");
-const containerType = document.getElementById("root");
-
-selectType.addEventListener("change", () => {
-  let condition = selectType.options[selectType.selectedIndex].text;
-  let pokemonType = window.filterPokeType(dataPokemon, condition);
-  console.log(pokemonType);
-
-  pokemonType.forEach(pokemon => {
-    return createCards(pokemonType)
-  })
-
-})
-
-// // MUESTRA TARJETITAS EN EL INDEX
-// let data = POKEMON.pokemon;
-// const infoCard = document.getElementById('pokemonId');
-// let infoCard = '';
-// window.addEventListener("load", function () {
-//   mostrarData(data);
-// });
-// const mostrarData = (data) => {
+  }
+  // MOSTRANDO DATA DESDE JSO; CONSTANTE FUNCIÓN(CREATECARDS) Y LE ENTREGO EL PARÁMETRO (DATAPOKEMON)
+  createCards(dataPokemon);
 
 
 
-//   data.forEach(element => {
-//     infoCard += `<div class="col-md-3">
-//         <div class="card">
-//         <img class="card-img-top" src="${element.img}" alt="Card image cap">
-//         <div class="card-body">
-//             <h5 class="card-title">${element.name}</h5>
-//             <p class="card-text">${element.egg}</p>
-//             <p class="card-text">${element.num}</p>
-//             <p class="card-text">${element.weaknesses}</p>
-//             <a href="#" class="btn btn-primary">Ver</a>
-//         </div>
-//         </div>
-//     </div>`
-//   })
 
-//   pokemonId.innerHTML = infoCard
-// }
+//  FILTRO POR TIPOS
+filterType.addEventListener("click",(event)=> {
+ pokemonCard = "";
+ let condition = event.target.text;
+ console.log(condition);
+  createCards(window.filterData.type(dataPokemon,condition));
+});
 
-// /* Manejo del DOM */
-// const dataPokemon = window.POKEMON.pokemon;
-// console.log(dataPokemon.length);
-
-// const dataPokemonFilterFire = window.dataPokemonFire;
-// // console.log(dataPokemonFilterFire);
-
-// const dataPokemonOrderAs = window.dataPokemonAs;
-// console.log(dataPokemonOrderAs);
-
-// let showPokemon = '';
-// let i;
-// //MOSTRANDO POKEMONS EN PANTALLA DENTRO DE UN CONTENEDOR
-// for (i = 0; i < dataPokemon.length; i++) {
-        
-//     showPokemon += `
-//         <a href="">
-//         <img style="width:110px; height: auto" src= ${dataPokemon[i].img} class="" alt="...">
-//         </a>`
-// }                
-// document.getElementById("item").innerHTML = showPokemon;
-
-// //FILTRANDO POKEMONS POR TIPO = Fire
-// document.getElementById("filter").innerHTML = dataPokemonFilterFire;
-
-// //ORDENANDO POKEMONS ALFABETICAMENTE: ASCENDENTE
-// document.getElementById("orderAs").innerHTML = dataPokemonOrderAs;
+// FILTRO POR HUEVOS
+filterEggs.addEventListener("click", (event) => {
+  pokemonCard = "";
+  let condition = event.target.text;
+  console.log(condition);
+  createCards(window.filterData.eggs(dataPokemon, condition));
+});
