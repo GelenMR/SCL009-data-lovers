@@ -1,17 +1,16 @@
-//DECLARAMOS NUESTRA VARIABLE QUE MUESTRA LA DATA TOTAL
-let btnSearchName = document.getElementById("btnSearchName");
-let searchName = document.getElementById("searchName").value;
+//DECLARAMOS NUESTRAS VARIABLES
+const dataPokemon = window.POKEMON.pokemon;
+const btnSearchName = document.getElementById("btnSearchName");
+const searchName = document.getElementById("searchName").value;
 const filterType = document.getElementById("filterType");
 const filterEgg = document.getElementById("filterEgg");
 
-let dataPokemon = window.POKEMON.pokemon;
 //CONTENEDOR DONDE MOSTRAREMOS LA INFO
 const showAll = document.getElementById("root");
 const createCards = (data) => {
   let pokemonCard = '';
   data.forEach((pokemon) => {
     card = `
-    
     <div class="col-12 col-md-3">
     <div class="card" style="width: 18rem;">
     <div class="card-body">
@@ -23,17 +22,13 @@ const createCards = (data) => {
     <b>Huevos </b><br> ${pokemon.egg}</b><br><br>
     </div>
     </div>
-    </div>
-    `;
+    </div>`;
     pokemonCard += card
   })
   showAll.innerHTML = pokemonCard
-  }
-  // MOSTRANDO DATA DESDE JSO; CONSTANTE FUNCIÓN(CREATECARDS) Y LE ENTREGO EL PARÁMETRO (DATAPOKEMON)
-  createCards(dataPokemon);
-
-
-
+ }
+ // LLAMADO A LA FUNCIÓN QUE CREA LA CARD: EL PARÁMETRO (DATAPOKEMON)
+ createCards(dataPokemon);
 
 //  FILTRO POR TIPOS
 filterType.addEventListener("click",(event)=> {
@@ -49,4 +44,11 @@ filterEggs.addEventListener("click", (event) => {
   let condition = event.target.text;
   console.log(condition);
   createCards(window.filterData.eggs(dataPokemon, condition));
+});
+
+//FILTRANDO POKEMONS POR NAME
+btnSearchName.addEventListener("click", () => {
+    pokemonCard = "";
+    let condition = searchName;
+   createCards(window.filterData.name(dataPokemon, condition));       
 });
