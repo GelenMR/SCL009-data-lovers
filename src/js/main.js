@@ -1,5 +1,50 @@
+//DECLARAMOS NUESTROS ARRAY DEL JSON
+let dataPokemon = window.POKEMON.pokemon;
+//CONTENEDOR DONDE MOSTRAREMOS LA INFO
+const showAll = document.getElementById("root");
+const createCards = (data) => {
+  let pokemonCard = '';
+  //RECORREMOS EL ARRAY 
+  data.forEach((pokemon) => {
+    //CREAMOS LA TARJETA CON LOS ELEMENTOS DEL ARRAY
+    card = `
+    <div class="col">
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <img src="${ pokemon.img}" /><br>
+    <b>Nº </b>${ pokemon.num}</b><br>
+    <b>${ pokemon.name}</b><br>
+    <b>Tipo </b><br> ${ pokemon.weaknesses}</b><br>
+    <b>Debilidades </b><br> ${ pokemon.weaknesses}<br>
+    <b>Huevos </b><br> ${pokemon.egg}</b><br><br>
+    </div>
+    </div>S
+    </div>
+    `;
+    pokemonCard += card
+  })
+  showAll.innerHTML = pokemonCard
+}
+//MOSTRAMOS LA DATA DESDE EL JSON
+createCards(dataPokemon)
 
-MUESTRA TARJETITAS EN EL INDEX
+
+// OBTENIENDO VALOR DE TIPO SELECCIONADO POR USUARIO EN DROPDOWN
+const selectType = document.getElementById("dropdown-item type-item");
+const containerType = document.getElementById("root");
+
+selectType.addEventListener("change", () => {
+  let condition = selectType.options[selectType.selectedIndex].text;
+  let pokemonType = window.filterPokeType(dataPokemon, condition);
+  console.log(pokemonType);
+
+  pokemonType.forEach(pokemon => {
+    return createCards(pokemonType)
+  })
+
+})
+
+// // MUESTRA TARJETITAS EN EL INDEX
 // let data = POKEMON.pokemon;
 // const infoCard = document.getElementById('pokemonId');
 // let infoCard = '';
@@ -28,30 +73,30 @@ MUESTRA TARJETITAS EN EL INDEX
 //   pokemonId.innerHTML = infoCard
 // }
 
-/* Manejo del DOM */
-const dataPokemon = window.POKEMON.pokemon;
-console.log(dataPokemon.length);
+// /* Manejo del DOM */
+// const dataPokemon = window.POKEMON.pokemon;
+// console.log(dataPokemon.length);
 
-const dataPokemonFilterFire = window.dataPokemonFire;
-console.log(dataPokemonFilterFire);
+// const dataPokemonFilterFire = window.dataPokemonFire;
+// // console.log(dataPokemonFilterFire);
 
-const dataPokemonOrderAs = window.dataPokemonAs;
-console.log(dataPokemonOrderAs);
+// const dataPokemonOrderAs = window.dataPokemonAs;
+// console.log(dataPokemonOrderAs);
 
-let showPokemon = '';
-let i;
-//MOSTRANDO POKEMONS EN PANTALLA DENTRO DE UN CONTENEDOR
-for (i = 0; i < dataPokemon.length; i++) {
+// let showPokemon = '';
+// let i;
+// //MOSTRANDO POKEMONS EN PANTALLA DENTRO DE UN CONTENEDOR
+// for (i = 0; i < dataPokemon.length; i++) {
         
-    showPokemon += `
-        <a href="">
-        <img style="width:110px; height: auto" src= ${dataPokemon[i].img} class="" alt="...">
-        </a>`
-}                
-document.getElementById("item").innerHTML = showPokemon;
+//     showPokemon += `
+//         <a href="">
+//         <img style="width:110px; height: auto" src= ${dataPokemon[i].img} class="" alt="...">
+//         </a>`
+// }                
+// document.getElementById("item").innerHTML = showPokemon;
 
-//FILTRANDO POKEMONS POR TIPO = Fire
-document.getElementById("filter").innerHTML = dataPokemonFilterFire;
+// //FILTRANDO POKEMONS POR TIPO = Fire
+// document.getElementById("filter").innerHTML = dataPokemonFilterFire;
 
-//ORDENANDO POKEMONS ALFABETICAMENTE: ASCENDENTE
-document.getElementById("orderAs").innerHTML = dataPokemonOrderAs;
+// //ORDENANDO POKEMONS ALFABETICAMENTE: ASCENDENTE
+// document.getElementById("orderAs").innerHTML = dataPokemonOrderAs;
