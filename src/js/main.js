@@ -34,7 +34,6 @@ const createCards = (data) => {
 filterType.addEventListener("click",(event)=> {
  pokemonCard = "";
  let condition = event.target.text;
- console.log(condition);
   createCards(window.filterData.type(dataPokemon,condition));
 });
 
@@ -51,4 +50,33 @@ btnSearchName.addEventListener("click", () => {
     pokemonCard = "";
     let condition = searchName;
    createCards(window.filterData.name(dataPokemon, condition));       
+});
+
+// ORDENAR AZ
+orderAsc.addEventListener("click", (event) => {
+  cardPokemon = '';
+
+  let sortOrderSelect = event.target.text;
+
+
+  let dataSorted;
+
+  if (sortOrderSelect === "A-Z") {
+    dataSorted = window.sortData(data, "name", "ascaz");
+
+  }
+
+  if (sortOrderSelect === "Z-A") {
+    dataSorted = window.sortData(data, "name", "descza");
+
+  }
+  if (sortOrderSelect === "Ascendente") {
+    dataSorted = window.sortData(data, "num", "ascnum");
+  }
+
+  if (sortOrderSelect === "Descendente") {
+    dataSorted = window.sortData(data, "num", "descnum");
+  }
+
+  showPokemon(dataSorted);
 });
