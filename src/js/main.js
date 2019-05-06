@@ -34,13 +34,8 @@ const createCards = (data) => {
 
 //  FILTRO POR TIPOS
 filterType.addEventListener("click",(event)=> {
-<<<<<<< HEAD
- pokemonCard = "";
- let condition = event.target.text;
-=======
   pokemonCard = "";
   let condition = event.target.text;
->>>>>>> d543a564cb0e28a91b7e551d8c4c782c145b10d0
   createCards(window.filterData.type(dataPokemon,condition));
 });
 
