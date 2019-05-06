@@ -17,7 +17,7 @@
 
 Pokémon GO es una aplicación gratuita para smartphones iOS (incluído Apple Watch) y Android desarrollada por *Niantic* en colaboración con *Nintendo* y *The Pokémon Company*. Esta hace uso de la realidad aumentada (por medio de la cámara del dispositivo) y la geolocalización (por medio del GPS) para que los jugadores encuentren Pokémon en el mapa del mundo real y los puedan capturar en sus dispositivos. De igual manera permite la crianza de Pokémon y combates por el control de gimnasios. El fenómeno social que ha causado esta aplicación es increíble y ha sobrepasado muchos límites que nunca creímos ver sobre la reacción de las personas ante una app o un pequeño monstruo saltando frente a nosotros… **¡En nuestro mundo!** Una dinámica poco convencional.
 
-![GIF DE USO POKEMON GO](https://media.giphy.com/media/iNZMFznWPRiKc/giphy.gif)
+![GIF DE USO POKEMON GO](https://media.giphy.com/media/abNFZwEhLCyZi/giphy.gif)
 
 ## **Mecánica de Juego 👉🏿📱**
 
@@ -28,13 +28,17 @@ En el juego se pueden capturar Pokémon salvajes mientras el jugador se mueve po
 **Conoce tu Pokemon** es una solución digital dirigida a los jugadores novatos de *Pokemon GO*, muy similar a un catálogo, donde hallarán a los 151 pokemon. En esta página podrán acceder facilmente a las características principales *-peso, altura, debilidades, tiempos-* de cada uno, a través de su nombre, número identificador, o simplemente buscando su tarjeta entre todas, con ayuda de nuestros últiles filtros de tipo. Esto le permitirá  al usuario agilizar la toma de decisiones y mejorar su estrategia dentro del juego.  
 
 ## **Proceso de diseño 💡**
+
 Para el proceso de diseño, se tuvo en consideración directa las necesidades del usuario objetivo, que fue identificado previa encuesta y entrevista. Las preguntas fueron las siguientes;
 * ¿Es usted usuario actualmente de la aplicación móvil pókemon go?.
 * Podría definir su nivel de experiencia y conocimiento respecto a este juego como: (básico, intermedio avanzado o experto)
 * ¿Qué información cree usted que le serviría para mejorar su estrategia dentro de este juego?
 
+
 [Ver encuesta 📊](https://docs.google.com/forms/d/e/1FAIpQLSfrfAju7lY7yyWafQmdtuOol5PEt3oRUHefXkrTeUJ4jiYVxQ/viewform)
+
 Y los resultados fueron los siguientes:
+
 
 ![Resultados](https://i.ibb.co/n8PQWJJ/encuestas.png)
 Con esto, logramos concluirlo siguiente, y responder las **vitales** preguntas para el desarrollo de la plataforma:
@@ -43,7 +47,9 @@ Con esto, logramos concluirlo siguiente, y responder las **vitales** preguntas p
 
 ## **Planificación de proyecto📌**
 la planificación cronológica de nuestro proyecto se encuentra registrada en **Trello**, que podemos [ver aquí](https://trello.com/b/k4vnWwLU/datalover). 
+
 ###Historias de Usuario 👨🏻‍💻
+
 #### Historia de usuario 1: Mostrar todos los pokemon.
 
 **Como** jugador novato de pokémon go✔
@@ -61,8 +67,11 @@ la planificación cronológica de nuestro proyecto se encuentra registrada en **
 **Como** jugador novato de pokemon go✔
 **Quiero** ordenar alfabeticamente los Pokemon✔
 **Para** hallar rápido el pokemon que busco para usar esa información en el juego✔
+
 [Ver Video (Test 2)](https://www.youtube.com/watch?v=ezNjLOtwv60)
+
 #####Criterios de aceptación 
+
 ➡La plataforma debe tener un ordenador que permita ordenar los pokemon alfabéticamente.
 ➡El contenedor me muestra los pokemon ordenados.
 ➡Selecciono el pokemon que necesito y accedo a su información.
@@ -72,9 +81,11 @@ la planificación cronológica de nuestro proyecto se encuentra registrada en **
 **Como** jugador novato de pokemon go✔
 **Quiero** poder filtrar la búsqueda de mi pokemon por tipo✔
 **Para** hallarlo más rapidamente y poder usar esa información en el juego✔
+
 [Ver video (Test 3)](https://www.youtube.com/watch?v=-MzRzAsMubw)
 
 ##### Criterios de aceptación
+
 ➡La plataforma debe tener un filtro que permita separar los pokemon por su tipo.
 ➡El contenedor me muestra sólo los pokemon del tipo que busco.
 ➡Selecciono el pokemon que necesito y accedo a su información.
@@ -84,9 +95,11 @@ la planificación cronológica de nuestro proyecto se encuentra registrada en **
 **Como** jugador novato de pokemon go✔
 **Quiero** poder filtrar la búsqueda de mi pokemon por km de huevos✔
 **Para** hallarlo más rapidamente y poder usar esa información en el juego✔
+
 [Ver video (Test 4)](https://www.youtube.com/watch?v=rlZCmmG-11Q)
 
 #####Criterios de aceptación
+
 ➡La plataforma debe tener un filtro que permita separar los pokemon por los km para obtener huevos.
 ➡El contenedor me muestra sólo los pokemon de los km que busco.
 ➡Selecciono el pokemon que necesito y accedo a su información.
@@ -96,8 +109,11 @@ la planificación cronológica de nuestro proyecto se encuentra registrada en **
 **Como** jugador novato de pokemon go✔
 **Quiero** poder hallar rápidamente el pokemon que necesito por su nombre✔
 **Para**  acceder a la información  y usarla en el juego✔
+
 [Ver video (Test 5)](https://www.youtube.com/watch?v=llKaKRzIDpI) 
+
 ##### Criterios de aceptación
+
 ➡La plataforma debe tener un filtro que permita ordenar los pokemon alfabéticamente.
 ➡El contenedor me muestra los pokemon ordenados.
 ➡Selecciono el pokemon que necesito y accedo a su información.
