@@ -1,6 +1,6 @@
 // FILTRO POR TIPO
 const filterData = {
- type: (dataPokemon,condition) => {
+ type: (dataPokemon, condition) => {
     const resultFilter = dataPokemon.filter(element =>{
         return element.type.includes(condition);
     }) 
@@ -11,56 +11,44 @@ const filterData = {
         return element.egg.includes(condition);
     })
     return resultFilter;
- }
+ },
 };
 window.filterData = filterData;
 // fin filtro por tipo
-name: (dataPokemon, condition) => {
-    const resultFilter = dataPokemon.filter(element => {
-        return element.name.includes(condition);
-    })
-    return resultFilter;
-}
-// ORDEN AZ
+
+// BUSQUEDA POR NAME
+const searchData = {
+ name: (data, condition) => {
+    let resultSearch = [];
+    for (let i = 0; i < data.length; i++){
+        if (data[i].name === condition){
+        resultSearch.push(data[i]);
+        } 
+    } return resultSearch;
+ },
+ num: (data, condition) => {
+    let resultSearch = [];
+    for (let i = 0; i < data.length; i++){
+        if (data[i].id === parseInt(condition)){
+        resultSearch.push(data[i]);
+        } 
+    } return resultSearch;
+ }
+};
+window.searchData = searchData;
+
+// ORDENAR POR NOMBRE y/o NUMERO
 const sortData = (data, sortBy, sortOrder) => {
-
-    let dataSort;
-
-    if (sortOrder === "ascaz") {
-        dataSort = data.sort((a, b) => {
-            return a[sortBy].localeCompare(b[sortBy]);
+    let orderData = [];
+    if (sortOrder === "asc"){
+        orderData = data.sort((a,b) => {
+        return a[sortBy].localeCompare(b[sortBy]);
         });
-
     }
-
-    else if (sortOrder === "descza") {
-        dataSort = data.sort((a, b) => {
-            return b[sortBy].localeCompare(a[sortBy]);
+    else if (sortOrder === "desc"){
+        orderData = data.sort((a,b) => {
+        return b[sortBy].localeCompare(a[sortBy]);
         });
-
     }
-
-    else if (sortOrder === "ascnum") {
-        dataSort = data.sort((a, b) => {
-            return a[sortBy].localeCompare(b[sortBy]);
-        });
-
-    }
-
-    else if (sortOrder === "descnum") {
-        dataSort = data.sort((a, b) => {
-            return b[sortBy].localeCompare(a[sortBy]);
-        });
-
-    }
-
-    return dataSort;
-
-}
-
-
-
-
-window.filterData = filterData;
-
+};
 window.sortData = sortData;

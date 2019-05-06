@@ -1,9 +1,10 @@
 //DECLARAMOS NUESTRAS VARIABLES
 const dataPokemon = window.POKEMON.pokemon;
 const btnSearchName = document.getElementById("btnSearchName");
-const searchName = document.getElementById("searchName").value;
 const filterType = document.getElementById("filterType");
 const filterEgg = document.getElementById("filterEgg");
+const orderAsc = document.getElementById("orderAsc");
+let searchName;
 
 //CONTENEDOR DONDE MOSTRAREMOS LA INFO
 const showAll = document.getElementById("root");
@@ -12,14 +13,14 @@ const createCards = (data) => {
   data.forEach((pokemon) => {
     card = `
     <div class="col-12 col-md-3">
-    <div class="card" style="width: 18rem;">
+    <div class="card bg" style="width: 17rem;">
     <div class="card-body">
-    <img src="${ pokemon.img}" /><br>
-    <b>Nº </b>${ pokemon.num}</b><br>
-    <b>${ pokemon.name}</b><br>
-    <b>Tipo </b><br> ${ pokemon.type}</b><br>
-    <b>Debilidades </b><br> ${ pokemon.weaknesses}<br>
-    <b>Huevos </b><br> ${pokemon.egg}</b><br><br>
+    <img src="${pokemon.img}" /><br>
+    <b>Nº </b>${pokemon.num}</b><br>
+    <h4>${pokemon.name}</h4>
+    <b>Tipo </b><br> ${pokemon.type+" "}</b><br>
+    <b>Debilidades </b><br> ${pokemon.weaknesses+" "}<br>
+    <b>Huevos </b><br> ${pokemon.egg}</b><br>
     </div>
     </div>
     </div>`;
@@ -45,38 +46,31 @@ filterEggs.addEventListener("click", (event) => {
   createCards(window.filterData.eggs(dataPokemon, condition));
 });
 
-//FILTRANDO POKEMONS POR NAME
+// BUSCAR POKEMONS POR NOMBRE
 btnSearchName.addEventListener("click", () => {
-    pokemonCard = "";
-    let condition = searchName;
-   createCards(window.filterData.name(dataPokemon, condition));       
+  pokemonCard = "";
+  event.preventDefault(); // corta la pagina para que aparezca la búsqueda
+  searchName = document.getElementById("searchName").value;
+  console.log(searchName);
+  createCards(window.searchData.name(dataPokemon, searchName));
+  //createCards(window.searchData.num(dataPokemon, searchName));       
 });
 
-// ORDENAR AZ
-orderAsc.addEventListener("click", (event) => {
-  cardPokemon = '';
-
-  let sortOrderSelect = event.target.text;
-
-
-  let dataSorted;
-
-  if (sortOrderSelect === "A-Z") {
-    dataSorted = window.sortData(data, "name", "ascaz");
-
+// ORDENAR POR NOMBRE ASCENDENTE
+order.addEventListener("click",(event) => {
+  pokemonCard = "";
+  let orderSelect = event.target.text;
+  let resultOrder = [];
+  if (orderSelect === "Nombre: A-Z"){
+    resultOrder.push(sortData(dataPokemon, "name", "asc"));
+    console.log(resultOrder); 
   }
-
-  if (sortOrderSelect === "Z-A") {
-    dataSorted = window.sortData(data, "name", "descza");
-
+  if (orderSelect === "Nombre: Z-A"){
+    resultOrder.push(sortData(dataPokemon, "name", "desc"));
+    console.log(resultOrder);
   }
-  if (sortOrderSelect === "Ascendente") {
-    dataSorted = window.sortData(data, "num", "ascnum");
-  }
-
-  if (sortOrderSelect === "Descendente") {
-    dataSorted = window.sortData(data, "num", "descnum");
-  }
-
-  showPokemon(dataSorted);
+  
+  createCards(resultOrder);
 });
+
+window.dataPokemon = dataPokemon;

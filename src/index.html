@@ -6,27 +6,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Pokemon</title>
+  <title>Conoce a tu Pokemon, Go!</title>
   <link rel="shortcut icon" href="image/icons-pok-ball.png">
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="bg" id="index">
-  <header class= "sticky"> 
-    <!--Victoria-->
+<body id="index">
+  <header class="sticky"> 
+    <!-- Banner -->
     <div class="container-fluid">
       <div class="row">
-        <div class="col sm-9 md-9 lg-11 titulo">
+        <div class="col sm-9 md-9 lg-11 title">
           <h1>¡CONOCE A TU POKEMON!</h1>
         </div>
         <div class="topright">
-          <img src="image/lg-pokemon.png" style="width:200px; height: auto" alt="logo-pokemon-go">
+          <img src="image/lg-pokemon.png" style="width:180px; height: auto" alt="logo-pokemon-go">
         </div>
       </div>
-      <!-- Segundo navbar que me envio Vita con Modificaciones / Menu de busqueda y filtros -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- Buscador por texto y su botón -->
+      <!-- Navbar/Menú de busqueda y filtros -->
+      <div class="w-100"></div>
+      <div class="col-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#"><img src="image/pokemon-go-png-logo-3161.png" width="120" height="auto" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <!-- Buscador por texto y su botón -->
           <form class="form-inline my-3 my-lg-1">
             <input class="form-control mr-sm-2" type="search" id="searchName" placeholder="Ingresa el nombre de tu Pokemon" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="btnSearchName">Buscar</button>
@@ -36,11 +42,11 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">Ordenar</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="order">
-                  <a class="dropdown-item" id="orderAsc" href="#">Nombre: A-Z</a>
-                  <a class="dropdown-item" id="orderDesc" href="#">Nombre: Z-A</a>
+                <div class="dropdown-menu" aria-labelledby="type-dropdown" id="order">
+                  <a class="dropdown-item" id="orderAsc" type-name="Nombre: A-Z">Nombre: A-Z</a>
+                  <a class="dropdown-item" id="orderDesc" type-name="Nombre: Z-A">Nombre: Z-A</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" id="orderNum" href="#">Número</a>
+                  <a class="dropdown-item" id="orderNum" type-name="Número">Número</a>
                 </div> 
             </li>
             <!-- DROPDOWN TIPOS -->
@@ -72,7 +78,7 @@
                   <a class="dropdown-item type-item" type-name="2 km">2 km</a>
                   <a class="dropdown-item type-item" type-name="5 km">5 km</a>
                   <a class="dropdown-item type-item" type-name="10 km">10 km</a>
-                  <a class="dropdown-item type-item" type-name="Not in Eggs">Not in Eggs</a>    
+                  <a class="dropdown-item type-item" type-name="Not in Eggs">Not in Eggs</a>
                 </div>
               </li>
             <!-- ./DROPDOWN -->
@@ -83,7 +89,7 @@
   <br>
   <!--TARJETAS DE POKEMON-->
   <section>
-    <div  class="container">
+    <div class="container">
       <div class="row" id="root">
       </div>
     </div>
