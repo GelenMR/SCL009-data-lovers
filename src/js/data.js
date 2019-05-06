@@ -42,7 +42,7 @@ const sortData = (data, sortBy, sortOrder) => {
     let orderData = [];
     if (sortOrder === "asc"){
         orderData = data.sort((a,b) => {
-        return a[sortBy]>b[sortBy];
+        return a[sortBy].localeCompare(b[sortBy]);
         });
     }
     else if (sortOrder === "desc"){
@@ -50,5 +50,16 @@ const sortData = (data, sortBy, sortOrder) => {
         return b[sortBy].localeCompare(a[sortBy]);
         });
     }
+    else if (sortOrder === "numasc"){
+        orderData = data.sort((a,b) => {
+        return a[sortBy].localeCompare(b[sortBy]);
+        });
+    }
+    else if (sortOrder === "numdesc"){
+        orderData = data.sort((a,b) => {
+        return b[sortBy].localeCompare(a[sortBy]);
+        });
+    }
+    return orderData;
 };
 window.sortData = sortData;
