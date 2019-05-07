@@ -40,7 +40,7 @@ Para el proceso de diseño, se tuvo en consideración directa las necesidades de
 Y los resultados fueron los siguientes:
 
 
-![Resultados](https://i.ibb.co/n8PQWJJ/encuestas.png)
+![Resultados](https://i.ibb.co/61XhQHL/encuestas.png)
 Con esto, logramos concluirlo siguiente, y responder las **vitales** preguntas para el desarrollo de la plataforma:
 
 **Nuestros usuarios objetivo serán las personas con conocimientos básicos del juego. Cuyo principal interés es poder consultar de manera ágil, eficiente  y rápida la información sobre los pokémon que podrían encontrar en el juego, siendo de estos los datos más relevantes -en orden de prioridades- las debilidades, su tipo o elemento, y el nombre. *Conoce tu Pokemon* es una aplicación sencilla, y fácil de comprender, que responde a las diferentes pantallas desde las cuales el usuario podría acceder, mostrándole información precisa y oportuna respecto a tus pokemon, que puede ser usada antes o durante una partida.**
@@ -117,3 +117,5 @@ la planificación cronológica de nuestro proyecto se encuentra registrada en **
 ➡La plataforma debe tener un filtro que permita ordenar los pokemon alfabéticamente.
 ➡El contenedor me muestra los pokemon ordenados.
 ➡Selecciono el pokemon que necesito y accedo a su información.
+
+###Prototipo de alta fidelidad

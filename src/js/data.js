@@ -1,5 +1,5 @@
 // FILTRO POR TIPO
-const filterData = {
+window.filterData = {
     type: (dataPokemon, condition) => {
         const resultFilter = dataPokemon.filter(element => {
             return element.type.includes(condition);
@@ -13,7 +13,7 @@ const filterData = {
         return resultFilter;
     },
 };
-window.filterData = filterData;
+
 // fin filtro por tipo
 
 // BUSQUEDA POR NOMBRE
