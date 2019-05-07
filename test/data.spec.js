@@ -1,6 +1,6 @@
 global.window = global;
 global.assert = require('chai').assert;
-require('../src/data');
+//require('../src/data/pokemon/pokemon');
 require('./data.spec.js');
 
 // describe('example', () => {
@@ -146,10 +146,42 @@ const data = [{
 
 describe ('filterData', () => {  
   
-  it ('deberia ser una function' , () => {
-    assert.equal (typeof filterData, 'function');
+  it ('Deberia ser una function' , () => {
+    assert.equal (typeof filterData.type, 'function');
   });
+
   it ('Deberia retornar el objeto Charmander al filtrar por tipo "Fire" ', () => {
     assert.deepEquial (window.filterData.type(data, 'Fire'), [data[3]]);
   });
-})
+
+  it ('Deberia retornar el objeto Charmander al filtrar por huevo "2 km" ', () => {
+    assert.deepEquial (window.filterData.eggs(data, '2 km'), [data[0], data[3]]);
+  });
+});
+
+describe('sortData', () => {
+
+  it('Debería ser una función', () => {
+    assert.equal(typeof sortData, 'function');
+  });
+
+  it('debería retornar el objeto ordenado de la A-Z', () => {
+    assert.deepEqual(window.sortData(data,'name','asc'), [
+      data[0], data[3], data[1], data[2]]);
+  });
+
+  it('debería retornar el objeto ordenado de la Z-A', () => {
+    assert.deepEqual(window.sortData(data,'name','desc'), [
+      data[2], data[1], data[3], data[0]]);
+  });
+
+  it('debería retornar el objeto ordenado por número: ascendente', () => {
+    assert.deepEqual(window.sortData(data,'num','numasc'), [
+      data[0], data[1], data[2], data[3]]);
+  });
+
+  it('debería retornar el objeto ordenado por número: descendente', () => {
+    assert.deepEqual(window.sortData(data,'num','numdesc'), [
+      data[3], data[2], data[1], data[0]]);
+  });
+});

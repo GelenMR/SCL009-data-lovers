@@ -16,7 +16,7 @@ const filterData = {
 window.filterData = filterData;
 // fin filtro por tipo
 
-// BUSQUEDA POR NAME
+// BUSQUEDA POR NOMBRE
 const searchData = {
  name: (data, condition) => {
     let resultSearch = [];
@@ -26,14 +26,14 @@ const searchData = {
         } 
     } return resultSearch;
  },
- num: (data, condition) => {
-    let resultSearch = [];
-    for (let i = 0; i < data.length; i++){
-        if (data[i].id === parseInt(condition)){
-        resultSearch.push(data[i]);
-        } 
-    } return resultSearch;
- }
+//  num: (data, condition) => {
+//     let resultSearch = [];
+//     for (let i = 0; i < data.length; i++){
+//         if (data[i].id === parseInt(condition)){
+//         resultSearch.push(data[i]);
+//         } 
+//     } return resultSearch;
+//  }
 };
 window.searchData = searchData;
 
@@ -63,3 +63,10 @@ const sortData = (data, sortBy, sortOrder) => {
     return orderData;
 };
 window.sortData = sortData;
+
+// arr sera el arreglo resultnte del filtrado por tipo
+// const percentType = (arr) => {
+//     let resultPercent = parseInt(arr.length / 151 * 100);
+//     return resultPercent;
+// }
+// window.resultPercent = resultPercent;
