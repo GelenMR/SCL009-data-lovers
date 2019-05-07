@@ -3,7 +3,7 @@ const dataPokemon = window.POKEMON.pokemon;
 const btnSearchName = document.getElementById("btnSearchName");
 const filterType = document.getElementById("filterType");
 const filterEggs = document.getElementById("filterEggs");
-//const order = document.getElementById("order");
+const order = document.getElementById("order");
 let card;
 let searchName;
 let pokemonCard = '';
@@ -63,19 +63,19 @@ order.addEventListener("click",(event) => {
   let orderSelect = event.target.text;
   let resultOrder = [];
   if (orderSelect === "Nombre: A-Z"){
-    resultOrder.push(sortData(dataPokemon, "name", "asc"));
+    resultOrder.push(window.sortData(dataPokemon, "name", "asc"));
     //console.log(resultOrder); 
   }
   if (orderSelect === "Nombre: Z-A"){
-    resultOrder.push(sortData(dataPokemon, "name", "desc"));
+    resultOrder.push(window.sortData(dataPokemon, "name", "desc"));
     //console.log(resultOrder);
   }
   if (orderSelect === "Número: Ascendente"){
-    resultOrder.push(sortData(dataPokemon, "num", "numasc"));
+    resultOrder.push(window.sortData(dataPokemon, "num", "numasc"));
     //console.log(resultOrder);
   }
   if (orderSelect === "Número: Descendente"){
-    resultOrder.push(sortData(dataPokemon, "num", "numdesc"));
+    resultOrder.push(window.sortData(dataPokemon, "num", "numdesc"));
     //console.log(resultOrder);
   }
   createCards (dataPokemon);
