@@ -10,7 +10,7 @@ let pokemonCard ='';
 
 //CONTENEDOR DONDE MOSTRAREMOS LA INFO
 const showAll = document.getElementById("root");
-const createCards = (data) => { 
+const createCards = (data) => {
   data.forEach((pokemon) => {
     card = `
     <div class="col-12 col-md-3">
@@ -28,15 +28,15 @@ const createCards = (data) => {
     pokemonCard += card
   })
   showAll.innerHTML = pokemonCard
- }
- // LLAMADO A LA FUNCIÓN QUE CREA LA CARD: EL PARÁMETRO (DATAPOKEMON)
- createCards(dataPokemon);
+}
+// LLAMADO A LA FUNCIÓN QUE CREA LA CARD: EL PARÁMETRO (DATAPOKEMON)
+createCards(dataPokemon);
 
 //  FILTRO POR TIPOS
-filterType.addEventListener("click",(event)=> {
+filterType.addEventListener("click", (event) => {
   pokemonCard = "";
   let condition = event.target.text;
-  createCards(window.filterData.type(dataPokemon,condition));
+  createCards(window.filterData.type(dataPokemon, condition));
 });
 
 // FILTRO POR HUEVOS
@@ -49,6 +49,7 @@ filterEggs.addEventListener("click", (event) => {
 // BUSCAR POKEMONS POR NOMBRE
 btnSearchName.addEventListener("click", () => {
   pokemonCard = "";
+  event.preventDefault();
   searchName = document.getElementById("searchName").value;
   createCards(window.searchData.name(dataPokemon, searchName));
   //createCards(window.searchData.num(dataPokemon, searchName));       
