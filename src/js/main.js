@@ -49,6 +49,7 @@ filterEggs.addEventListener("click", (event) => {
 // BUSCAR POKEMONS POR NOMBRE
 btnSearchName.addEventListener("click", () => {
   pokemonCard = "";
+  event.preventDefault();
   searchName = document.getElementById("searchName").value;
   //console.log(searchName);
   createCards(window.searchData.name(dataPokemon, searchName));
