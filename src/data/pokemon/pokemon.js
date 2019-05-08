@@ -3766,7 +3766,7 @@ const POKEMON = {
     "height": "0.99 m",
     "weight": "35.0 kg",
     "candy": "None",
-    "egg": "Omanyte Candy",
+    "egg": "5 Km",
     "spawn_chance": 0.0061,
     "avg_spawns": 0.61,
     "spawn_time": "05:04",
