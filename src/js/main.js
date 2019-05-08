@@ -7,6 +7,7 @@ const order = document.getElementById("order");
 let card;
 let searchName;
 let pokemonCard ='';
+//let pokemonCardType = '';
 
 //CONTENEDOR DONDE MOSTRAREMOS LA INFO
 const showAll = document.getElementById("root");
@@ -76,3 +77,12 @@ order.addEventListener("click",(event) => {
   createCards (dataPokemon);
 });
 window.dataPokemon = dataPokemon;
+
+// PORCENTAJE DE POKEMONS POR TIPO
+// 
+// btnCalculation.addEventListener("click", () => {
+//   event.preventDefault();
+//   createCardsPercent(window.filterData.type(dataPokemon, condition));
+//   percentType(pokemonCardType);
+//   //AQUI SE DEBE LLAMAR A LA FUNCIÓN QUE CREARA EL MODAL DONDE SE IMPRIMIRA EL CALCULO
+// });

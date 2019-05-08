@@ -6,6 +6,12 @@ require('./data.spec.js');
 
 describe('filterData', () => {
   it('debería ser un objeto', () => {
-    assert.equal(typeof filterData, 'object');
+    assert.typeOf (window.filterData, 'Object');
+  });
+});
+
+describe('sortData', () => {
+  it('debería ser una function', () => {
+    assert.equal(typeof sortData, 'function');
   });
 });

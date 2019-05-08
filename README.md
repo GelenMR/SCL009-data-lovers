@@ -17,7 +17,7 @@
 
 Pokémon GO es una aplicación gratuita para smartphones iOS (incluído Apple Watch) y Android desarrollada por *Niantic* en colaboración con *Nintendo* y *The Pokémon Company*. Esta hace uso de la realidad aumentada (por medio de la cámara del dispositivo) y la geolocalización (por medio del GPS) para que los jugadores encuentren Pokémon en el mapa del mundo real y los puedan capturar en sus dispositivos. De igual manera permite la crianza de Pokémon y combates por el control de gimnasios. El fenómeno social que ha causado esta aplicación es increíble y ha sobrepasado muchos límites que nunca creímos ver sobre la reacción de las personas ante una app o un pequeño monstruo saltando frente a nosotros… **¡En nuestro mundo!** Una dinámica poco convencional.
 
-![GIF DE USO POKEMON GO](https://media.giphy.com/media/abNFZwEhLCyZi/giphy.gif
+![GIF DE USO POKEMON GO](https://media.giphy.com/media/abNFZwEhLCyZi/giphy.gif)
 
 ## **Mecánica de Juego 👉🏿📱**
 
@@ -40,7 +40,7 @@ Para el proceso de diseño, se tuvo en consideración directa las necesidades de
 Y los resultados fueron los siguientes:
 
 
-![Resultados](https://i.ibb.co/61XhQHL/encuestas.png)
+![Resultados](https://i.ibb.co/n8PQWJJ/encuestas.png)
 Con esto, logramos concluirlo siguiente, y responder las **vitales** preguntas para el desarrollo de la plataforma:
 
 **Nuestros usuarios objetivo serán las personas con conocimientos básicos del juego. Cuyo principal interés es poder consultar de manera ágil, eficiente  y rápida la información sobre los pokémon que podrían encontrar en el juego, siendo de estos los datos más relevantes -en orden de prioridades- las debilidades, su tipo o elemento, y el nombre. *Conoce tu Pokemon* es una aplicación sencilla, y fácil de comprender, que responde a las diferentes pantallas desde las cuales el usuario podría acceder, mostrándole información precisa y oportuna respecto a tus pokemon, que puede ser usada antes o durante una partida.**
@@ -48,7 +48,7 @@ Con esto, logramos concluirlo siguiente, y responder las **vitales** preguntas p
 ## **Planificación de proyecto📌**
 la planificación cronológica de nuestro proyecto se encuentra registrada en **Trello**, que podemos [ver aquí](https://trello.com/b/k4vnWwLU/datalover). 
 
-###Historias de Usuario 👨🏻‍💻
+## **Historias de Usuario 👨🏻‍💻**
 
 #### Historia de usuario 1: Mostrar todos los pokemon.
 
@@ -70,7 +70,7 @@ la planificación cronológica de nuestro proyecto se encuentra registrada en **
 
 [Ver Video (Test 2)](https://www.youtube.com/watch?v=ezNjLOtwv60)
 
-#####Criterios de aceptación 
+##### Criterios de aceptación 
 
 ➡La plataforma debe tener un ordenador que permita ordenar los pokemon alfabéticamente.
 ➡El contenedor me muestra los pokemon ordenados.
@@ -98,7 +98,7 @@ la planificación cronológica de nuestro proyecto se encuentra registrada en **
 
 [Ver video (Test 4)](https://www.youtube.com/watch?v=rlZCmmG-11Q)
 
-#####Criterios de aceptación
+##### Criterios de aceptación
 
 ➡La plataforma debe tener un filtro que permita separar los pokemon por los km para obtener huevos.
 ➡El contenedor me muestra sólo los pokemon de los km que busco.
@@ -118,4 +118,4 @@ la planificación cronológica de nuestro proyecto se encuentra registrada en **
 ➡El contenedor me muestra los pokemon ordenados.
 ➡Selecciono el pokemon que necesito y accedo a su información.
 
-###Prototipo de alta fidelidad
+## **Prototipo de Alta Fidelidad**
