@@ -7,6 +7,7 @@ const order = document.getElementById("order")
 let card='';
 let searchName='';
 let pokemonCard ='';
+let resultPercent= document.getElementById("containerPercent"); 
 //let pokemonCardType = '';
 
 //CONTENEDOR DONDE MOSTRAREMOS LA INFO
@@ -37,10 +38,12 @@ createCards(dataPokemon);
 
 //  FILTRO POR TIPOS
 filterType.addEventListener("click", (event) => {
-  pokemonCard = "";
+  pokemonCard="";
   let condition = event.target.text;
+  let pokeType = window.filterData.type(dataPokemon,condition);
+  resultPercent.innerHTML = "El porcentaje de los Pokemones de tipo " + condition + " es de " + window.calcPercent(pokeType, dataPokemon) + "%";
   createCards(window.filterData.type(dataPokemon, condition));
-});
+})
 
 // FILTRO POR HUEVOS
 filterEggs.addEventListener("click", (event) => {
@@ -87,3 +90,6 @@ window.dataPokemon = dataPokemon;
 //   percentType(pokemonCardType);
 //   //AQUI SE DEBE LLAMAR A LA FUNCIÓN QUE CREARA EL MODAL DONDE SE IMPRIMIRA EL CALCULO
 // });
+
+//  let porcentaje = window.percent(dataPokemon);
+// document.getElementById('calculo-agregado').innerHTML = `<p id="porcentaje" class="${element}">El ${porcentaje}% de los pokemones de la región Kanto son de tipo ${element}.</p>`;
