@@ -3,31 +3,32 @@ const dataPokemon = window.POKEMON.pokemon;
 const btnSearchName = document.getElementById("btnSearchName");
 const filterType = document.getElementById("filterType");
 const filterEggs = document.getElementById("filterEggs");
-const order = document.getElementById("order");
-let card;
-let searchName;
+const order = document.getElementById("order")
+let card='';
+let searchName='';
 let pokemonCard ='';
-
 //CONTENEDOR DONDE MOSTRAREMOS LA INFO
 const showAll = document.getElementById("root");
+// INFORMACIÓN DENTRO DE LA TARJETA
 const createCards = (data) => {
-  data.forEach((pokemon) => {
+  data.forEach((element) => {
     card = `
-    <div class="col-12 col-md-3">
     <div class="card bg" style="width: 17.5rem">
-    <div class="card-body">
-    <img src="${pokemon.img}" /><br>
-    <b>Nº </b>${pokemon.num}</b><br>
-    <h4>${pokemon.name}</h4>
-    <b>Tipo </b><br> ${pokemon.type+" "}</b><br>
-    <b>Debilidades </b><br> ${pokemon.weaknesses+" "}<br>
-    <b>Huevos </b><br> ${pokemon.egg}</b>
-    </div>
-    </div>
-    </div>`;
-    pokemonCard += card
+      <div class="card-body">
+      <img src="${element.img}" /><br>
+      <b>Nº </b>${element.num}</b><br>
+      <h4>${element.name}</h4>
+      <b>Tipo </b><br> ${element.type+" "}</b><br>
+      <b>Debilidades </b><br> ${element.weaknesses+" "}<br>
+      <b>Altura </b><br> ${element.height}</b><br>
+      <b>Peso </b><br> ${element.weight}</b><br>
+      <b>Huevos </b><br> ${element.egg}</b><br>
+      <b>Candies</b><br> ${element.candy}</b><br>
+      </div>
+    </div>`
+   pokemonCard += card;
   })
-  showAll.innerHTML = pokemonCard
+  showAll.innerHTML = pokemonCard;
 }
 // LLAMADO A LA FUNCIÓN QUE CREA LA CARD: EL PARÁMETRO (DATAPOKEMON)
 createCards(dataPokemon);
@@ -54,7 +55,6 @@ btnSearchName.addEventListener("click", () => {
   createCards(window.searchData.name(dataPokemon, searchName));
   //createCards(window.searchData.num(dataPokemon, searchName));       
 });
-
 // ORDENAR POR NOMBRE ASCENDENTE
 order.addEventListener("click",(event) => {
   pokemonCard = "";
