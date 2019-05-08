@@ -1,66 +1,93 @@
-
-//MUESTRA TARJETITAS EN EL INDEX
-// 
-// let infoCard = '';
-// let btnCard = document.getElementById("${dataPokemon[i].img}");
-// btnCard.addEventListener("click", () => {
-
-//   showData(dataPokemon[i]);
-// });
-// const showData = (dataPokemon) => {
-//   data.forEach(element => {
-//     infoCard = `<div class="col-md-3">
-//         <div class="card">
-//         <img class="card-img-top" src="${element[i].img}" alt="Card image cap">
-//         <div class="card-body">
-//             <h5 class="card-title">${element[i].name}</h5>
-//             <p class="card-text"> ${element[i].num}</p>
-//             <p class="card-text">${element[i].type}</p>
-//             <p class="card-text">${element[i].egg}</p>
-//             <p class="card-text">${element[i].weaknesses}</p>
-//         </div>
-//         </div>
-//     </div>`
-//   })
-//   document.getElementById('card').innerHTML = infoCard
-// }
-
-/* Manejo del DOM */
+//DECLARAMOS NUESTRAS VARIABLES
 const dataPokemon = window.POKEMON.pokemon;
-console.log(dataPokemon.length);
-window.dataPokemon = dataPokemon;
+const btnSearchName = document.getElementById("btnSearchName");
+const filterType = document.getElementById("filterType");
+const filterEggs = document.getElementById("filterEggs");
+const order = document.getElementById("order")
+let card='';
+let searchName='';
+let pokemonCard ='';
+//let pokemonCardType = '';
 
-let showPokemon = '';
-let i;
-//MOSTRANDO POKEMONS EN PANTALLA DENTRO DE UN CONTENEDOR
-for (i = 0; i < dataPokemon.length; i++) {
-    showPokemon += `
-        <a href="#card" id="${dataPokemon[i].num}">
-        <img style="width:110px; height: auto" src= ${dataPokemon[i].img} class="" alt="...">
-        </a>`
-}                
-document.getElementById("item").innerHTML = showPokemon;
+//CONTENEDOR DONDE MOSTRAREMOS LA INFO
+const showAll = document.getElementById("root");
+// INFORMACIÓN DENTRO DE LA TARJETA
+const createCards = (data) => {
+  data.forEach((element) => {
+    card = `
+    <div class="card bg" style="width: 17.5rem">
+      <div class="card-body">
+      <img src="${element.img}" /><br>
+      <b>Nº </b>${element.num}</b><br>
+      <h4>${element.name}</h4>
+      <b>Tipo </b><br> ${element.type+" "}</b><br>
+      <b>Debilidades </b><br> ${element.weaknesses+" "}<br>
+      <b>Altura </b><br> ${element.height}</b><br>
+      <b>Peso </b><br> ${element.weight}</b><br>
+      <b>Huevos </b><br> ${element.egg}</b><br>
+      <b>Candies</b><br> ${element.candy}</b><br>
+      </div>
+    </div>`
+   pokemonCard += card;
+  })
+  showAll.innerHTML = pokemonCard;
+}
+// LLAMADO A LA FUNCIÓN QUE CREA LA CARD: EL PARÁMETRO (DATAPOKEMON)
+createCards(dataPokemon);
 
-//FILTRANDO POKEMONS POR NAME
-let btnSearchName = document.getElementById("btnSearchName");
-btnSearchName.addEventListener("click", () => {
-    showPokemon = "";
-    let searchName = document.getElementById("searchName").value;
-    window.filterNamePokemon(dataPokemon, searchName);
-        
+//  FILTRO POR TIPOS
+filterType.addEventListener("click", (event) => {
+  pokemonCard = "";
+  let condition = event.target.text;
+  createCards(window.filterData.type(dataPokemon, condition));
 });
 
-document.getElementById("orderAsc").innerHTML = resultFilterName;
+// FILTRO POR HUEVOS
+filterEggs.addEventListener("click", (event) => {
+  pokemonCard = "";
+  let condition = event.target.text;
+  createCards(window.filterData.eggs(dataPokemon, condition));
+});
 
+// BUSCAR POKEMONS POR NOMBRE
+btnSearchName.addEventListener("click", () => {
+  pokemonCard = "";
+  event.preventDefault();
+  searchName = document.getElementById("searchName").value;
+  createCards(window.searchData.name(dataPokemon, searchName));
+  //createCards(window.searchData.num(dataPokemon, searchName));       
+});
+// ORDENAR POR NOMBRE ASCENDENTE
+order.addEventListener("click",(event) => {
+  pokemonCard = "";
+  
+  let orderSelect = event.target.text;
+  let resultOrder = [];
+  if (orderSelect === "Nombre: A-Z"){
+    resultOrder.push(window.sortData(dataPokemon, "name", "asc")); 
+  }
+  if (orderSelect === "Nombre: Z-A"){
+    resultOrder.push(window.sortData(dataPokemon, "name", "desc"));
+  }
+  if (orderSelect === "Número: Ascendente"){
+    resultOrder.push(window.sortData(dataPokemon, "num", "numasc"));
+  }
+  if (orderSelect === "Número: Descendente"){
+    resultOrder.push(window.sortData(dataPokemon, "num", "numdesc"));
+  }
+  createCards (dataPokemon);
+});
+window.dataPokemon = dataPokemon;
 
+// PORCENTAJE DE POKEMONS POR TIPO
+// 
+// btnCalculation.addEventListener("click", () => {
+//   event.preventDefault();
+//   createCardsPercent(window.filterData.type(dataPokemon, condition));
+//   percentType(pokemonCardType);
+//   //AQUI SE DEBE LLAMAR A LA FUNCIÓN QUE CREARA EL MODAL DONDE SE IMPRIMIRA EL CALCULO
+// });
 
-
-//FILTRANDO POKEMONS POR TIPO = Fire
-const dataPokemonFilterFire = window.dataPokemonFire;
-console.log(dataPokemonFilterFire);
-document.getElementById("filter").innerHTML = dataPokemonFilterFire;
-
-//ORDENANDO POKEMONS ALFABETICAMENTE: ASCENDENTE
-// const dataPokemonOrderAs = window.dataPokemonAs;
-// console.log(dataPokemonOrderAs);
-// document.getElementById("orderAs").innerHTML = dataPokemonOrderAs;
+// OTRO SHOW calculo (VER GIT DE MARIA)
+//  let porcentaje = window.percent(datatype); datatype es una variable igualada a dataPokemon
+// document.getElementById('calculo-agregado').innerHTML = `<p id="porcentaje" class="${element}">El ${porcentaje}% de los pokemones de la región Kanto son de tipo ${element}.</p>`;

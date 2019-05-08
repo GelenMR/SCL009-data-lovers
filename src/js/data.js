@@ -1,45 +1,75 @@
-/* Manejo de data */
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
-const example = () => {
-  return 'example';
-};
-
-window.example = example;
-
-// FUNCIÓN FILTRAR POR NOMBRE
-let resultFilterName = [];
-const filterNamePokemon = (data, condition) =>{
-  for (let i= 0; i<data.length; i++){
-    if (data[i].name === condition) {
-    resultFilterName.push(data[i]);
+// FILTRO POR TIPO
+window.filterData = {
+    type: (dataPokemon, condition) => {
+        const resultFilter = dataPokemon.filter(element => {
+            return element.type.includes(condition);
+        })
+        return resultFilter;
     }
-  }
-  return resultFilterName;
+    ,
+    eggs: (dataPokemon, condition) => {
+        const resultFilter = dataPokemon.filter(element => {
+            return element.egg.includes(condition);
+        })
+        return resultFilter;
+    }
 };
-console.log(filterNamePokemon(dataPokemon, searchName));
-window.resultFilterName = resultFilterName;
 
+// fin filtro por tipo
 
+// BUSQUEDA POR NOMBRE
+const searchData = {
+ name: (data, condition) => {
+    let resultSearch = [];
+    for (let i = 0; i < data.length; i++){
+        if (data[i].name === condition){
+        resultSearch.push(data[i]);
+        } 
+    } return resultSearch;
+ },
+//  num: (data, condition) => {
+//     let resultSearch = [];
+//     for (let i = 0; i < data.length; i++){
+//         if (data[i].id === parseInt(condition)){
+//         resultSearch.push(data[i]);
+//         } 
+//     } return resultSearch;
+//  }
+};
+window.searchData = searchData;
 
-// FUNCIÓN FILTRAR POR TIPO
-// const dataPokemonFire = (window.dataPokemon.filter(element =>{
-//   console.log(element.type.includes("Fire"));
-//   return(element.type.includes("Fire"));
-// }));
+// ORDENAR POR NOMBRE y/o NUMERO
+const sortData = (data, sortBy, sortOrder) => {
+    let orderData = [];
+    if (sortOrder === "asc") {
+        orderData = data.sort((a, b) => {
+            return a[sortBy].localeCompare(b[sortBy]);
+        });
+    }
+    else if (sortOrder === "desc") {
+        orderData = data.sort((a, b) => {
+            return b[sortBy].localeCompare(a[sortBy]);
+        });
+    }
+    else if (sortOrder === "numasc") {
+        orderData = data.sort((a, b) => {
+            return a[sortBy].localeCompare(b[sortBy]);
+        });
+    }
+    else if (sortOrder === "numdesc") {
+        orderData = data.sort((a, b) => {
+            return b[sortBy].localeCompare(a[sortBy]);
+        });
+    }
+    return orderData;
+};
+window.sortData = sortData;
 
-// FUNCIÓN ORDENAR ASCENDENTE
-// const dataPokemonAsc = dataPokemon.sort ((a,b) =>{
-//   return (a.name> b.name)
-// });
+// arr sera el arreglo resultnte del filtrado por tipo
+// const percentType = (arr) => {
+//     let resultPercent = parseInt(arr.length / 151 * 100);
+//     return resultPercent;
+// }
+// window.resultPercent = resultPercent;
 
-// FILTRADO POR TIPO intento 1 VITA
-/*window.data = {
-  filterType: (arr, type) => {
-      let pokemonType = [];
-      for (let i = 0; i < arr.length; i++) {
-          if (arr[i].type.length > 1) {
-              if (arr[i].type[0] == type || arr[i].type[1] == type) {
-                  pokemonType.push(arr[i]);
-              }
-      // Hago un nuevo arreglo con los que voy  a identificar*/
+//console.log(typeof(window.filterData))
