@@ -71,6 +71,8 @@ window.sortData = sortData;
 //     return resultPercent;
 // }
 // window.resultPercent = resultPercent;
+
+// CALCULO DE PORCENTAJE SEGUN TIPOS
 const calcPercent = (arr, data) =>{
     let resultCalc = Math.round((arr.length * 100) / data.length );
     return resultCalc;
