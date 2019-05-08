@@ -5,14 +5,13 @@ window.filterData = {
             return element.type.includes(condition);
         })
         return resultFilter;
-    }
-    ,
+    },
     eggs: (dataPokemon, condition) => {
         const resultFilter = dataPokemon.filter(element => {
             return element.egg.includes(condition);
         })
         return resultFilter;
-    }
+    },
 };
 
 // fin filtro por tipo
@@ -71,5 +70,3 @@ window.sortData = sortData;
 //     return resultPercent;
 // }
 // window.resultPercent = resultPercent;
-
-//console.log(typeof(window.filterData))
