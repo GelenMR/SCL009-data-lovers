@@ -1,4 +1,4 @@
-// FILTRO POR TIPO
+// FILTRO POR TIPO y/o HUEVO
 window.filterData = {
     type: (dataPokemon, condition) => {
         const resultFilter = dataPokemon.filter(element => {
@@ -15,7 +15,7 @@ window.filterData = {
     }
 };
 
-// BUSQUEDA POR NOMBRE
+// BUSQUEDA POR NOMBRE y/o NUMERO
 window.searchData = {
  name: (data, condition) => {
     let resultSearch = [];
@@ -25,17 +25,17 @@ window.searchData = {
         } 
     } return resultSearch;
  },
-//  num: (data, condition) => {
-//     let resultSearch = [];
-//     for (let i = 0; i < data.length; i++){
-//         if (data[i].id === parseInt(condition)){
-//         resultSearch.push(data[i]);
-//         } 
-//     } return resultSearch;
-//  }
+ num: (data, condition) => {
+    let resultSearch = [];
+    for (let i = 0; i < data.length; i++){
+        if (data[i].id === parseInt(condition)){
+        resultSearch.push(data[i]);
+        } 
+    } return resultSearch;
+ }
 };
 
-// ORDENAR POR NOMBRE y/o NUMERO
+// ORDENAR ASCENDENTE/DESCENDENTE POR NOMBRE y/o NUMERO
 const sortData = (data, sortBy, sortOrder) => {
     let orderData = [];
     if (sortOrder === "asc") {
@@ -62,7 +62,7 @@ const sortData = (data, sortBy, sortOrder) => {
 };
 window.sortData = sortData;
 
-// CALCULO DE PORCENTAJE SEGUN TIPOS
+// CALCULO DE PORCENTAJE SEGUN TIPO y/o HUEVO
 // arr sera el arreglo resultnte del filtrado por tipo
 const calcPercent = (arr, data) =>{
     let resultCalc = Math.round((arr.length * 100) / data.length );

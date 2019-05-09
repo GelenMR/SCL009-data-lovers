@@ -40,48 +40,51 @@ describe('filterData.type', () => {
   it('debería ser una función', () => {
     assert.equal(typeof window.filterData.type, 'function');
   });
-
   it('Deberia retornar el objeto Charmander al filtrar por tipo "Fire" ', () => {
     assert.deepEqual(window.filterData.type(data, 'Fire'), [ data[3] ]);
   });
+});
 
+describe('filterData.eggs', () => {
+  it('debería ser una función', () => {
+    assert.equal(typeof window.filterData.eggs, 'function');
+  });
   it('Deberia retornar el objeto Charmander al filtrar por huevo "2 km" ', () => {
       assert.deepEqual(window.filterData.eggs(data, '2 km'), [ data[0], data[3] ]);
   });
 });
 
 describe('sortData', () => {
-
   it('Debería ser una función', () => {
       assert.equal(typeof sortData, 'function');
   });
-
   it('debería retornar el objeto ordenado de la A-Z', () => {
       assert.deepEqual(window.sortData(data, 'name', 'asc'), [
           data[0], data[1], data[2], data[3]]);
   });
-
   it('debería retornar el objeto ordenado de la Z-A', () => {
       assert.deepEqual(window.sortData(data, 'name', 'desc'), [
           data[0], data[1], data[2], data[3]]);
   });
-
   it('debería retornar el objeto ordenado por número: ascendente', () => {
       assert.deepEqual(window.sortData(data, 'num', 'numasc'), [
           data[0], data[1], data[2], data[3]]);
   });
-
   it('debería retornar el objeto ordenado por número: descendente', () => {
       assert.deepEqual(window.sortData(data, 'num', 'numdesc'), [
           data[0], data[1], data[2], data[3]]);
   });
 });
+
 describe('searchData', () => {
   it('Debería ser un objeto', () => {
     assert.equal(typeof window.searchData, 'object');
   });
   it('Debería retornarme el objeto solicitado por su nombre: Bulbasaur', () => {
     assert.deepEqual(window.searchData.name(data, 'Bulbasaur'), [data[3]]);
+  });
+  it('Debería retornarme el objeto solicitado por su número: 002 - Ivysaur', () => {
+    assert.deepEqual(window.searchData.num(data, '002'), [data[2]]);
   });
 });
 
