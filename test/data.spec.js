@@ -76,3 +76,20 @@ describe('sortData', () => {
           data[0], data[1], data[2], data[3]]);
   });
 });
+describe('searchData', () => {
+  it('Debería ser un objeto', () => {
+    assert.equal(typeof window.searchData, 'object');
+  });
+  it('Debería retornarme el objeto solicitado por su nombre: Bulbasaur', () => {
+    assert.deepEqual(window.searchData.name(data, 'Bulbasaur'), [data[3]]);
+  });
+});
+
+describe('calcPercent', () => {
+  it('Debería ser una función', () => {
+    assert.equal(typeof window.calcPercent, 'function');
+  });
+  it('Debería retornar para tipo Fire el porcentaje: 25%', () => {
+    assert.deepEqual(window.calcPercent(data, 'Fire')[data[0]]);
+  });
+});
