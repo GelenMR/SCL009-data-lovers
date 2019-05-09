@@ -1,4 +1,4 @@
-
+//dom
 //DECLARAMOS NUESTRAS VARIABLES
 const dataPokemon = window.POKEMON.pokemon;
 const btnSearchName = document.getElementById("btnSearchName");
@@ -8,6 +8,7 @@ const order = document.getElementById("order")
 let card='';
 let searchName='';
 let pokemonCard ='';
+let pokeType = "";
 let resultPercent= document.getElementById("containerPercent"); 
 //let pokemonCardType = '';
 
@@ -40,8 +41,9 @@ createCards(dataPokemon);
 //  FILTRO POR TIPOS
 filterType.addEventListener("click", (event) => {
   pokemonCard="";
+  resultPercent.innerHTML = "";
   let condition = event.target.text;
-  let pokeType = window.filterData.type(dataPokemon,condition);
+  pokeType = window.filterData.type(dataPokemon,condition);
   resultPercent.innerHTML = `
     <div  class="bg-percentage">
       <h2>El Porcentaje de Pokemones de Tipo <b>${condition}</b> es de <b>${window.calcPercent(pokeType, dataPokemon)} %</b></h2>
@@ -52,13 +54,20 @@ filterType.addEventListener("click", (event) => {
 // FILTRO POR HUEVOS
 filterEggs.addEventListener("click", (event) => {
   pokemonCard = "";
+  resultPercent.innerHTML = "";
   let condition = event.target.text;
+  pokeType = window.filterData.eggs(dataPokemon, condition);
+  resultPercent.innerHTML = `
+    <div  class="bg-percentage">
+      <h2>El Porcentaje de Pokemones con Huevos de <b>${condition}</b> es de <b>${window.calcPercent(pokeType, dataPokemon)} %</b></h2>
+    </div>`
   createCards(window.filterData.eggs(dataPokemon, condition));
 });
 
 // BUSCAR POKEMONS POR NOMBRE
 btnSearchName.addEventListener("click", () => {
   pokemonCard = "";
+  resultPercent.innerHTML = "";
   event.preventDefault();
   searchName = document.getElementById("searchName").value;
   createCards(window.searchData.name(dataPokemon, searchName));
@@ -67,7 +76,7 @@ btnSearchName.addEventListener("click", () => {
 // ORDENAR POR NOMBRE ASCENDENTE
 order.addEventListener("click",(event) => {
   pokemonCard = "";
-  
+  resultPercent.innerHTML = "";
   let orderSelect = event.target.text;
   let resultOrder = [];
   if (orderSelect === "Nombre: A-Z"){
@@ -85,15 +94,3 @@ order.addEventListener("click",(event) => {
   createCards (dataPokemon);
 });
 window.dataPokemon = dataPokemon;
-
-// PORCENTAJE DE POKEMONS POR TIPO
-// 
-// btnCalculation.addEventListener("click", () => {
-//   event.preventDefault();
-//   createCardsPercent(window.filterData.type(dataPokemon, condition));
-//   percentType(pokemonCardType);
-//   //AQUI SE DEBE LLAMAR A LA FUNCIÓN QUE CREARA EL MODAL DONDE SE IMPRIMIRA EL CALCULO
-// });
-
-//  let porcentaje = window.percent(dataPokemon);
-// document.getElementById('calculo-agregado').innerHTML = `<p id="porcentaje" class="${element}">El ${porcentaje}% de los pokemones de la región Kanto son de tipo ${element}.</p>`;
