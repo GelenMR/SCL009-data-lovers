@@ -1,3 +1,4 @@
+
 //DECLARAMOS NUESTRAS VARIABLES
 const dataPokemon = window.POKEMON.pokemon;
 const btnSearchName = document.getElementById("btnSearchName");
@@ -16,7 +17,7 @@ const showAll = document.getElementById("root");
 const createCards = (data) => {
   data.forEach((element) => {
     card = `
-    <div class="card bg" style="width: 17.5rem">
+    <div class="card bg" style="width: 17rem">
       <div class="card-body">
       <img src="${element.img}" /><br>
       <b>Nº </b>${element.num}</b><br>
@@ -41,7 +42,10 @@ filterType.addEventListener("click", (event) => {
   pokemonCard="";
   let condition = event.target.text;
   let pokeType = window.filterData.type(dataPokemon,condition);
-  resultPercent.innerHTML = "El porcentaje de los Pokemones de tipo " + condition + " es de " + window.calcPercent(pokeType, dataPokemon) + "%";
+  resultPercent.innerHTML = `
+  <div  class="bg-percentage">
+    <h2>El porcentaje de los Pokemones de tipo ${condition} es de ${window.calcPercent(pokeType, dataPokemon)} %</h2>
+  </div>`;
   createCards(window.filterData.type(dataPokemon, condition));
 })
 

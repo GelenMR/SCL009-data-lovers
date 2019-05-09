@@ -12,11 +12,14 @@ body{
     height: 100%;
 }
 .logonav{
-    position: fixed;
     /*top: 10px;*/
     right: 8px;
     margin: 0%;
     padding: 20px;
+}
+.logonav img{
+    width:180px;
+    max-width: 100%;
 }
 .title{
     padding: 40px;
@@ -32,21 +35,40 @@ body{
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
-    border: 1px solid rgba(0, 0, 0, 0.650);
     background-color: rgba(0, 0, 0, 0.850);
     z-index: 100;
 }
+ul {
+    position: sticky;
+    top: 0px;
+}
 .bg {
-    background-color: rgba(0, 0, 0, 0.750);
-    border: 2px solid rgba(0, 0, 0, 0.650);
+    background-color: rgba(0, 0, 0, 0.75);
     text-align: center;
     color: rgb(224, 224, 224);
 }
-.margin0 {
-    margin-left: 0px;
-    margin-right: 0px;
+.bg-percentage {
+    width: 100%;
+    padding: 50px;
+    background-color: rgba(240, 240, 240, 0.75);
+    text-align: center;
+    color: rgb(13, 30, 146);
+}
+.btn-blue {
+    color: rgb(60, 105, 225);
+    border-color: rgb(60, 105, 225);
+}
+.btn-blue:hover {
+    color: rgb(240,240,240);
+    background-color: rgb(60, 105, 225);
 }
 .container {
-    margin: 50px;
-
+    padding-top: 25px;
+}
+header {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.card {
+    margin: 5px 5px;
+    padding: 0% 2%;
 }

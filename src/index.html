@@ -11,90 +11,91 @@
 </head>
 
 <body id="index">
-  <header class="sticky">
+  <header>
     <!-- Banner -->
     <div class="container-fluid">
       <div class="row">
-        <div class="col sm-9 md-9 lg-11 title">
+        <div class="col-10 title">
           <h1>¡CONOCE A TU POKEMON!</h1>
         </div>
-        <div class="logonav">
-          <img src="image/lg-pokemon.png" width="180" alt="logo-pokemon-go">
+        <div class="col-2 logonav">
+          <img src="image/lg-pokemon.png" alt="Logo Pokemon Go">
         </div>
-      </div>
-      <!-- Navbar/Menú de busqueda y filtros -->
-      <div class="w-100"></div>
-      <div class="col-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="index.html"><img src="image/pokemon-go-png-logo-3161.png" width="120" alt="logo-pokemon-go-inicio"></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <!-- Buscador por texto y su botón -->
-            <form class="form-inline my-3 my-lg-1">
-              <input class="form-control mr-sm-2" type="search" size="35" id="searchName"
-                placeholder="Ingresa el nombre de tu Pokemon" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="btnSearchName">Buscar</button>
-            </form>
-            <ul class="navbar-nav mr-auto">
-              <!-- DROPDOWN ORDENAR -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="false">Ordenar</a>
-                <div class="dropdown-menu" id="order">
-                  <a class="dropdown-item" id="orderAsc">Nombre: A-Z</a>
-                  <a class="dropdown-item" id="orderDesc">Nombre: Z-A</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" id="orderNumAsc">Número: Ascendente</a>
-                  <a class="dropdown-item" id="orderNumDes">Número: Descendente</a>
-                </div>
-              </li>
-              <!-- DROPDOWN TIPOS -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="false">Filtrar por Tipos</a>
-                <div class="dropdown-menu" id="filterType">
-                  <a class="dropdown-item type-item" id="bug">Bug</a>
-                  <a class="dropdown-item type-item" id="dragon">Dragon</a>
-                  <a class="dropdown-item type-item" id="electric">Electric</a>
-                  <a class="dropdown-item type-item" id="fire">Fire</a>
-                  <a class="dropdown-item type-item" id="fighting">Fighting</a>
-                  <a class="dropdown-item type-item" id="flying">Flying</a>
-                  <a class="dropdown-item type-item" id="ghost">Ghost</a>
-                  <a class="dropdown-item type-item" id="grass">Grass</a>
-                  <a class="dropdown-item type-item" id="ground">Ground</a>
-                  <a class="dropdown-item type-item" id="ice">Ice</a>
-                  <a class="dropdown-item type-item" id="normal">Normal</a>
-                  <a class="dropdown-item type-item" id="poison">Poison</a>
-                  <a class="dropdown-item type-item" id="psychic">Psychic</a>
-                  <a class="dropdown-item type-item" id="rock">Rock</a>
-                </div>
-              </li>
-              <!-- DROPDOWN HUEVITOS -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="false">Filtrar por Huevos</a>
-                <div class="dropdown-menu" id="filterEggs">
-                  <a class="dropdown-item type-item">2 km</a>
-                  <a class="dropdown-item type-item">5 km</a>
-                  <a class="dropdown-item type-item">10 km</a>
-                  <a class="dropdown-item type-item">Not in Eggs</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
       </div>
     </div>
   </header>
-  <br>
-  <div id="containerPercent" class=" row justify-content-center"></div>
-  <!--TARJETAS DE POKEMON-->
+  <nav class="sticky">
+    <!-- Navbar/Menú de busqueda y filtros -->
+    <div class="col-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html"><img src="image/pokemon-go-png-logo-3161.png" width="120" alt="Logo Pokemon Go Inicio"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <!-- Buscador por texto y su botón -->
+          <form class="form-inline my-3 my-lg-1">
+            <input class="form-control mr-sm-2" type="search" size="35" id="searchName"
+              placeholder="Ingresa el nombre de tu Pokemon" aria-label="Search">
+            <button class="btn btn-blue my-2 my-sm-0" type="submit" id="btnSearchName">Buscar</button>
+          </form>
+          <ul class="navbar-nav mr-auto">
+            <!-- DROPDOWN ORDENAR -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">Ordenar</a>
+              <div class="dropdown-menu" id="order">
+                <a class="dropdown-item" id="orderAsc">Nombre: A-Z</a>
+                <a class="dropdown-item" id="orderDesc">Nombre: Z-A</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" id="orderNumAsc">Número: Ascendente</a>
+                <a class="dropdown-item" id="orderNumDes">Número: Descendente</a>
+              </div>
+            </li>
+            <!-- DROPDOWN TIPOS -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">Filtrar por Tipos</a>
+              <div class="dropdown-menu" id="filterType">
+                <a class="dropdown-item type-item" id="bug">Bug</a>
+                <a class="dropdown-item type-item" id="dragon">Dragon</a>
+                <a class="dropdown-item type-item" id="electric">Electric</a>
+                <a class="dropdown-item type-item" id="fire">Fire</a>
+                <a class="dropdown-item type-item" id="fighting">Fighting</a>
+                <a class="dropdown-item type-item" id="flying">Flying</a>
+                <a class="dropdown-item type-item" id="ghost">Ghost</a>
+                <a class="dropdown-item type-item" id="grass">Grass</a>
+                <a class="dropdown-item type-item" id="ground">Ground</a>
+                <a class="dropdown-item type-item" id="ice">Ice</a>
+                <a class="dropdown-item type-item" id="normal">Normal</a>
+                <a class="dropdown-item type-item" id="poison">Poison</a>
+                <a class="dropdown-item type-item" id="psychic">Psychic</a>
+                <a class="dropdown-item type-item" id="rock">Rock</a>
+              </div>
+            </li>
+            <!-- DROPDOWN HUEVITOS -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">Filtrar por Huevos</a>
+              <div class="dropdown-menu" id="filterEggs">
+                <a class="dropdown-item type-item">2 km</a>
+                <a class="dropdown-item type-item">5 km</a>
+                <a class="dropdown-item type-item">10 km</a>
+                <a class="dropdown-item type-item">Not in Eggs</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </nav>
   <section>
-    <div class="container ">
+    <!--  -->
+    <div id="containerPercent" class=""></div>
+    <!--TARJETAS DE POKEMON-->
+    <div class="container">
       <div class="row" id="root"></div>
-      </div>
+    </div>
   </section>
   <br>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
