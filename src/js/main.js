@@ -20,14 +20,14 @@ const createCards = (data) => {
     <div class="card bg" style="width: 17rem">
       <div class="card-body">
       <img src="${element.img}" /><br>
-      <b>Nº </b>${element.num}</b><br>
-      <h4>${element.name}</h4>
-      <b>Tipo </b><br> ${element.type+" "}</b><br>
+      <b>Nº </b>${element.num} <br>
+      <h4>${element.name} </h4>
+      <b>Tipo </b><br> ${element.type+" "} <br>
       <b>Debilidades </b><br> ${element.weaknesses+" "}<br>
-      <b>Altura </b><br> ${element.height}</b><br>
-      <b>Peso </b><br> ${element.weight}</b><br>
-      <b>Huevos </b><br> ${element.egg}</b><br>
-      <b>Candies</b><br> ${element.candy}</b><br>
+      <b>Altura: </b> ${element.height} <br>
+      <b>Peso: </b> ${element.weight} <br>
+      <b>Huevos </b><br> ${element.egg} <br>
+      <b>Candies</b><br> ${element.candy} <br>
       </div>
     </div>`
    pokemonCard += card;
@@ -43,9 +43,9 @@ filterType.addEventListener("click", (event) => {
   let condition = event.target.text;
   let pokeType = window.filterData.type(dataPokemon,condition);
   resultPercent.innerHTML = `
-  <div  class="bg-percentage">
-    <h2>El porcentaje de los Pokemones de tipo ${condition} es de ${window.calcPercent(pokeType, dataPokemon)} %</h2>
-  </div>`;
+    <div  class="bg-percentage">
+      <h2>El Porcentaje de Pokemones de Tipo <b>${condition}</b> es de <b>${window.calcPercent(pokeType, dataPokemon)} %</b></h2>
+    </div>`
   createCards(window.filterData.type(dataPokemon, condition));
 })
 

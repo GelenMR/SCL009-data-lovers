@@ -15,10 +15,8 @@ window.filterData = {
     }
 };
 
-// fin filtro por tipo
-
 // BUSQUEDA POR NOMBRE
-const searchData = {
+window.searchData = {
  name: (data, condition) => {
     let resultSearch = [];
     for (let i = 0; i < data.length; i++){
@@ -36,7 +34,6 @@ const searchData = {
 //     } return resultSearch;
 //  }
 };
-window.searchData = searchData;
 
 // ORDENAR POR NOMBRE y/o NUMERO
 const sortData = (data, sortBy, sortOrder) => {
@@ -65,14 +62,8 @@ const sortData = (data, sortBy, sortOrder) => {
 };
 window.sortData = sortData;
 
-// arr sera el arreglo resultnte del filtrado por tipo
-// const percentType = (arr) => {
-//     let resultPercent = parseInt(arr.length / 151 * 100);
-//     return resultPercent;
-// }
-// window.resultPercent = resultPercent;
-
 // CALCULO DE PORCENTAJE SEGUN TIPOS
+// arr sera el arreglo resultnte del filtrado por tipo
 const calcPercent = (arr, data) =>{
     let resultCalc = Math.round((arr.length * 100) / data.length );
     return resultCalc;
