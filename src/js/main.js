@@ -56,6 +56,11 @@ filterEggs.addEventListener("click", (event) => {
   pokemonCard = "";
   resultPercent.innerHTML = "";
   let condition = event.target.text;
+  pokeType = window.filterData.eggs(dataPokemon, condition);
+  resultPercent.innerHTML = `
+    <div  class="bg-percentage">
+      <h2>El Porcentaje de Pokemones con Huevos de <b>${condition}</b> es de <b>${window.calcPercent(pokeType, dataPokemon)} %</b></h2>
+    </div>`
   createCards(window.filterData.eggs(dataPokemon, condition));
 });
 
