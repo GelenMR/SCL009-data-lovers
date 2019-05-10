@@ -29,6 +29,7 @@ En el juego se pueden capturar Pokémon salvajes mientras el jugador se mueve po
 
 ## **Definición de *Conoce tu pokemon* 🎮**
 **Conoce tu Pokemon** es una solución digital dirigida a los jugadores novatos de *Pokemon GO*, muy similar a un catálogo, donde hallarán a los 151 pokemon. En esta página podrán acceder facilmente a las características principales *-nombre, tipo, debilidades, huevos, candies, altura y peso-* de cada uno, a través de su nombre, número identificador, o simplemente buscando su tarjeta entre todas, con ayuda de nuestros últiles filtros de tipo. Esto le permitirá  al usuario agilizar la toma de decisiones y mejorar su estrategia dentro del juego.  
+![CONOCE TU POKEMON, GO!](https://media.giphy.com/media/abNFZwEhLCyZi/giphy.gif)
 
 ## **Proceso de diseño 💡**
 
@@ -50,17 +51,18 @@ la planificación cronológica de nuestro proyecto se encuentra registrada en **
 
 El proceso de planificación comenzó con una lluvia de ideas, análisis de la data recibida y formulación de preguntas. Los primeros bocetos obtenidos fueron los siguientes: 
 
- ![BAJA FIDELIDAD 1.1](https://i.ibb.co/r2DPfYT/IMG-20190509-154544.jpg)
- ![BAJA FIDELIDAD 1.2](https://i.ibb.co/qsfbMRt/IMG-20190509-154552.jpg)
+ ![BAJA FIDELIDAD 1.1](https://scontent.fscl6-1.fna.fbcdn.net/v/t1.0-9/59877736_2382479245306797_851061689691406336_n.jpg?_nc_cat=100&_nc_ht=scontent.fscl6-1.fna&oh=6ec5ef8e20156d5ee4f8593622c68db1&oe=5D55EFF2) prototipo baja fideldiad 1
+ ![BAJA FIDELIDAD 1.2](https://scontent.fscl6-1.fna.fbcdn.net/v/t1.0-9/60046996_2382479258640129_2971784358542704640_n.jpg?_nc_cat=100&_nc_ht=scontent.fscl6-1.fna&oh=839c21d477f41016ee18c22bfc16b56a&oe=5D649860)
+
  Se trataba de una aplicación que constaba de dos pantalla, la primera estaba compuesta por una barra de navegación en el borde inferior, que traía los botones de filtro y orden, además de un buscador por texto, y un carrusel que mostraba todas las tarjetas de pokemon cliqueables, para que el usuario seleccionara el pokemon necesario y obtuviera a través de las segunda pantalla toda la información de la data y su fotografía ampliada. El cálculo pretendía aplicarse al hacer un cuadro comparativo de dos pokemon seleccionados.
  Después de los primeros test de usuarios realizados, se obtuvieron reveladoras conclusiones; los usuarios manifestaron que si bien el sistema carrusel se se veía estéticamente prometedor, no agilizaba la búsqueda  por el tiempo entre *página y página*, y realmente el cuadro comparativo no era necesario si de en una sola pantalla se podía apreciar toda la información sin necesidad de *volver*.  
 
  Con los *feedbacks* anteriores, mandamos nuestro primer prototipo  directo al cementerio de ideas 💔 y nos movimos rápido para elaborar una segunda maqueta de proyecto:
 
 
- ![BAJA FIDELIDAD 2.1](https://i.ibb.co/9g5njCN/IMG-20190509-154415.jpg)
- ![BAJA FIDELIDAD 2.2](https://i.ibb.co/MpY3YJn/IMG-20190509-161846-resized-20190509-041900531.jpg)
- ![BAJA FIDELIDAD 2.3](https://i.ibb.co/HqKy1wG/IMG-20190509-161824-resized-20190509-041859805.jpg)
+ ![BAJA FIDELIDAD 2.1](https://scontent.fscl6-1.fna.fbcdn.net/v/t1.0-9/59788033_2382479175306804_8677028497174036480_n.jpg?_nc_cat=108&_nc_ht=scontent.fscl6-1.fna&oh=e9268686525a8c68dd5f9cf50eacf557&oe=5D5F6E0E)
+ ![BAJA FIDELIDAD 2.2](https://scontent.fscl6-1.fna.fbcdn.net/v/t1.0-9/59943081_2382479155306806_3814913166328987648_n.jpg?_nc_cat=106&_nc_ht=scontent.fscl6-1.fna&oh=b24c627f4662ccabea4c9894920f0623&oe=5D65F1EB)
+ ![BAJA FIDELIDAD 2.3](https://scontent.fscl6-1.fna.fbcdn.net/v/t1.0-9/60086436_2382479231973465_47160793904447488_n.jpg?_nc_cat=110&_nc_ht=scontent.fscl6-1.fna&oh=a453ab52c8e53199ce844119579e375b&oe=5D693EF0)
 
  *(Aprovecharemos de adjuntar los videos que hicimos probando la usabilidad de este segundo prototipo por historia, ¡no están de más! 
  [Historia 1](https://www.youtube.com/watch?v=gK8AMQBLb2A), [2](https://www.youtube.com/watch?v=ezNjLOtwv60), [3](https://www.youtube.com/watch?v=-MzRzAsMubw), [4](https://www.youtube.com/watch?v=rlZCmmG-11Q) y [5](https://www.youtube.com/watch?v=llKaKRzIDpI))*
@@ -145,7 +147,7 @@ Se trataba de la misma pantalla principal del prototipo anterior, pero con toda 
 **Quiero** retornar al inicio de la página✔
 **Para** poder buscar con otro criterio✔
 
-######Esta historia no tiene video porque se ejecuta en cada una de las anteriores.
+##### Esta historia no tiene video porque se ejecuta en cada una de las anteriores.
 
 ##### Criterios de aceptación
 
