@@ -20,7 +20,7 @@
 Pokémon GO es una aplicación gratuita para smartphones iOS (incluído Apple Watch) y Android desarrollada por *Niantic* en colaboración con *Nintendo* y *The Pokémon Company*. Esta hace uso de la realidad aumentada (por medio de la cámara del dispositivo) y la geolocalización (por medio del GPS) para que los jugadores encuentren Pokémon en el mapa del mundo real y los puedan capturar en sus dispositivos. De igual manera permite la crianza de Pokémon y combates por el control de gimnasios. El fenómeno social que ha causado esta aplicación es increíble y ha sobrepasado muchos límites que nunca creímos ver sobre la reacción de las personas ante una app o un pequeño monstruo saltando frente a nosotros… **¡En nuestro mundo!** Una dinámica poco convencional.
 
 
-![GIF DE USO POKEMON GO](https://media.giphy.com/media/abNFZwEhLCyZi/giphy.gif)
+![GIF DE USO POKEMON GO](https://scontent.fscl6-1.fna.fbcdn.net/v/t1.0-9/59845430_2382478218640233_2376130200552341504_n.jpg?_nc_cat=109&_nc_ht=scontent.fscl6-1.fna&oh=c0732691d16f64eeba901b50a3326fc5&oe=5D5ECD34)
 
 ## **Mecánica de Juego 👉🏿📱**
 

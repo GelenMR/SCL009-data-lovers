@@ -5,11 +5,16 @@ window.filterData = {
             return element.type.includes(condition);
         })
         return resultFilter;
-    }
-    ,
+    },
     eggs: (dataPokemon, condition) => {
         const resultFilter = dataPokemon.filter(element => {
             return element.egg.includes(condition);
+        })
+        return resultFilter;
+    },
+    weakness: (dataPokemon, condition) => {
+        const resultFilter = dataPokemon.filter(element => {
+            return element.weaknesses.includes(condition);
         })
         return resultFilter;
     }

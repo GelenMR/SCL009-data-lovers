@@ -64,6 +64,19 @@ filterEggs.addEventListener("click", (event) => {
   createCards(pokeType);
 });
 
+// FILTRO POR DEBILIDADES
+filterWeakness.addEventListener("click", (event) => {
+  pokemonCard = "";
+  resultPercent.innerHTML = "";
+  let condition = event.target.text;
+  pokeType = window.filterData.weakness(dataPokemon, condition);
+  resultPercent.innerHTML = `
+    <div  class="bg-percentage">
+      <h2>El Porcentaje de Pokemones con Debilidad de <b>${condition}</b> es de <b>${window.calcPercent(pokeType, dataPokemon)}%</b></h2>
+    </div>`
+  createCards(pokeType);
+});
+
 // BUSCAR POKEMONS POR NOMBRE y/o NUMERO
 btnSearchName.addEventListener("click", () => {
   pokemonCard = "";
