@@ -20,7 +20,7 @@ fetch('https://raw.githubusercontent.com/GelenMR/SCL009-data-lovers/master/src/d
     //CONTENEDOR DONDE MOSTRAREMOS LA INFO
     const showAll = document.getElementById("root");
     const resultPercent = document.getElementById("containerPercent");
-    const resultChart = document.getElementById("myChart").getContext("2d");
+    //const resultChart = document.getElementById("myChart").getContext("2d");
 
     // INFORMACIÓN DENTRO DE LA TARJETA
     const createCards = (data) => {
@@ -50,7 +50,7 @@ fetch('https://raw.githubusercontent.com/GelenMR/SCL009-data-lovers/master/src/d
     filterType.addEventListener("click", (event) => {
       pokemonCard="";
       resultPercent.innerHTML = "";
-      resultChart.innerHTML = "";
+      //resultChart.innerHTML = "";
       let condition = event.target.text;
       pokePercent = window.filterData.type(dataPokemon,condition);
       resultPercent.innerHTML = `
@@ -59,14 +59,14 @@ fetch('https://raw.githubusercontent.com/GelenMR/SCL009-data-lovers/master/src/d
         </div>`
       createCards(pokePercent);
       // IMPRIMIR EL CHART ACA
-      resultChart.innerHTML = "";
+      //resultChart.innerHTML = "";
     });
 
     // FILTRO POR HUEVOS
     filterEggs.addEventListener("click", (event) => {
       pokemonCard = "";
       resultPercent.innerHTML = "";
-      resultChart.innerHTML = "";
+      //resultChart.innerHTML = "";
       let condition = event.target.text;
       pokePercent = window.filterData.eggs(dataPokemon, condition);
       resultPercent.innerHTML = `
@@ -75,14 +75,14 @@ fetch('https://raw.githubusercontent.com/GelenMR/SCL009-data-lovers/master/src/d
         </div>`
       createCards(pokePercent);
       // IMPRIMIR EL CHART ACA
-      resultChart.innerHTML = "";
+      //resultChart.innerHTML = "";
     });
 
     // FILTRO POR DEBILIDADES
     filterWeakness.addEventListener("click", (event) => {
       pokemonCard = "";
       resultPercent.innerHTML = "";
-      resultChart.innerHTML = "";
+      //resultChart.innerHTML = "";
       let condition = event.target.text;
       pokePercent = window.filterData.weakness(dataPokemon, condition);
       resultPercent.innerHTML = `
@@ -91,7 +91,7 @@ fetch('https://raw.githubusercontent.com/GelenMR/SCL009-data-lovers/master/src/d
         </div>`
       createCards(pokePercent);
       // IMPRIMIR EL CHART ACA
-      resultChart.innerHTML = "";
+      //resultChart.innerHTML = "";
     });
 
     // BUSCAR POKEMONS POR NOMBRE y/o NUMERO
